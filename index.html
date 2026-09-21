@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frontier Research Lab</title>
+<meta name="description" content="Frontier Research Lab studies how authority, memory, and identity should behave inside systems that act on their own.">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2F3F0;
+    --paper-2:#FFFFFF;
+    --ink:#0D1115;
+    --ink-60:rgba(13,17,21,.62);
+    --ink-40:rgba(13,17,21,.42);
+    --rule:rgba(13,17,21,.14);
+    --blue:#001ACF;
+    --blue-bright:#6C80FF;
+    --lime:#C4EA02;
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --gut:clamp(20px,5vw,72px);
+    --maxw:1320px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  ::selection{background:var(--lime);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+  .mono{
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;
+  }
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:20;background:rgba(242,243,240,.86);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid transparent;transition:border-color .3s ease;
+  }
+  header.scrolled{border-bottom-color:var(--rule)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;
+       padding-block:18px 16px}
+  .brand{display:flex;align-items:center;gap:0;text-decoration:none}
+  .brand img{display:block;width:clamp(158px,17vw,206px);height:auto}
+  nav ul{display:flex;gap:clamp(16px,2.4vw,34px);list-style:none;margin:0;padding:0}
+  nav a{
+    text-decoration:none;color:var(--ink-60);font-family:var(--mono);
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s ease;
+  }
+  nav a:hover{color:var(--ink);border-bottom-color:var(--lime)}
+  .nav-mail{color:var(--ink)}
+
+  /* hero */
+  .hero{padding-block:clamp(48px,9vw,110px) clamp(40px,6vw,72px)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+             gap:clamp(28px,5vw,64px);align-items:center}
+  .eyebrow{color:var(--ink-40);margin:0 0 clamp(20px,3vw,30px)}
+  .eyebrow span{color:var(--ink-60)}
+  h1{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(32px,4.35vw,56px);line-height:1.06;letter-spacing:-.03em;
+    margin:0 0 26px;text-wrap:balance;
+  }
+  h1 .dim{color:rgba(13,17,21,.46)}
+  .lede{font-size:clamp(17px,1.35vw,19px);color:var(--ink-60);max-width:52ch;margin:0 0 34px}
+  .actions{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);padding:13px 20px;border-radius:2px;
+    transition:background .2s ease,transform .2s ease;
+  }
+  .btn:hover{background:var(--blue);transform:translateY(-1px)}
+  .btn .dot{width:6px;height:6px;border-radius:50%;background:var(--lime)}
+  .link{
+    text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-60);border-bottom:1px solid var(--rule);
+    padding-bottom:3px;transition:.2s ease;
+  }
+  .link:hover{color:var(--ink);border-bottom-color:var(--ink)}
+  .viz{position:relative;width:100%;max-width:500px;margin-left:auto}
+  .viz .frame{aspect-ratio:1;width:100%}
+  .viz canvas{width:100%;height:100%;display:block}
+  .viz figcaption{color:var(--ink-40);max-width:46ch;line-height:1.75;margin-top:20px}
+
+  
+  /* views */
+  .view-section { display: none; }
+  .view-section.active { display: block; }
+
+  /* generic section */
+  section{border-top:1px solid var(--rule);scroll-margin-top:84px}
+  .sec{padding-block:clamp(52px,7vw,96px)}
+  .sec-head{display:grid;grid-template-columns:180px minmax(0,1fr);gap:clamp(20px,4vw,56px)}
+  .sec-head h2{
+    font-family:var(--display);font-weight:700;letter-spacing:-.02em;
+    font-size:clamp(24px,2.6vw,34px);line-height:1.18;margin:0 0 18px;max-width:22ch;
+  }
+  .sec-label{color:var(--ink-40);padding-top:9px}
+  .prose p{max-width:66ch;margin:0 0 20px;font-size:clamp(17px,1.3vw,19px)}
+  .prose p:last-child{margin-bottom:0}
+  .prose strong{font-weight:500;background:linear-gradient(transparent 62%,rgba(196,234,2,.48) 62%)}
+
+  /* research grid */
+  .areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+         border-top:1px solid var(--rule);margin-top:clamp(30px,4vw,48px)}
+  .area{padding:30px 34px 34px 0;border-bottom:1px solid var(--rule)}
+  .area:nth-child(odd){padding-right:clamp(24px,4vw,64px)}
+  .area:nth-child(even){padding-left:clamp(24px,4vw,64px);border-left:1px solid var(--rule)}
+  .area h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em;
+           margin:12px 0 10px}
+  .area p{margin:0;color:var(--ink-60);font-size:15.5px;max-width:44ch}
+  .area .tag{color:var(--blue)}
+
+  /* publications */
+  .pub{
+    display:grid;grid-template-columns:210px minmax(0,1fr) 130px;gap:clamp(16px,3vw,40px);
+    padding:26px 0;border-bottom:1px solid var(--rule);align-items:baseline;
+    text-decoration:none;transition:padding-left .25s ease;
+  }
+  .pub:first-of-type{border-top:1px solid var(--rule)}
+  .pubs{margin-top:clamp(30px,4vw,48px)}
+  .pub:hover{padding-left:10px}
+  .pub h3{font-family:var(--display);font-weight:500;font-size:clamp(17px,1.5vw,21px);
+          letter-spacing:-.015em;line-height:1.32;margin:0 0 8px}
+  .pub-link{text-decoration:none;color:inherit;transition:color .2s ease;display:inline-block}
+  .pub-link:hover{color:var(--blue);text-decoration:underline;text-underline-offset:4px}
+  .pub-link:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+  .pub p{margin:0;color:var(--ink-60);font-size:15px;max-width:60ch}
+  .meta{color:var(--ink-40);line-height:1.9}
+  .status{color:var(--ink-40);text-align:right;white-space:nowrap}
+  .status.live{color:var(--blue)}
+
+  /* publication detail */
+  #publication-detail .wrap{
+    max-width:min(92vw,1440px);
+    padding-inline:clamp(20px,4vw,56px);
+  }
+  .pub-detail-wrap{
+    max-width:100%;
+    margin:0 auto;
+    width:100%;
+  }
+  .pub-detail-back{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-bottom:clamp(24px,3vw,36px);text-decoration:none;
+    color:var(--ink-60);transition:color .2s ease;
+  }
+  .pub-detail-back:hover{color:var(--blue)}
+  .pub-detail-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:16px;margin-bottom:24px;padding-bottom:16px;
+    border-bottom:1px solid var(--rule);
+  }
+  .pub-detail-meta .type{color:var(--blue);font-size:11.5px}
+  .pub-detail-meta .status{color:var(--ink-40);font-size:11.5px}
+  .pub-detail-title{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(28px,3.2vw,44px);line-height:1.16;
+    letter-spacing:-.02em;margin:0 0 16px;max-width:100%;
+  }
+  .pub-detail-subtitle{
+    font-size:clamp(16.5px,1.25vw,19.5px);color:var(--ink-60);
+    line-height:1.55;margin:0 0 32px;max-width:95ch;
+  }
+  .pub-author-card{
+    background:var(--paper-2);border:1px solid var(--rule);
+    padding:clamp(22px,2.6vw,34px);border-radius:2px;margin-bottom:38px;
+    display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+    gap:clamp(24px,3vw,48px);align-items:center;
+  }
+  .pub-author-main{display:flex;flex-direction:column;gap:6px}
+  .pub-author-label{font-size:11px;color:var(--blue);letter-spacing:.16em}
+  .pub-author-name{
+    font-family:var(--display);font-weight:700;font-size:clamp(20px,1.6vw,24px);
+    margin:0;color:var(--ink);
+  }
+  .pub-author-role{color:var(--ink-60);font-size:15px;line-height:1.5;margin:0}
+  .pub-author-lab{color:var(--ink-40);font-size:11px;letter-spacing:.08em;margin:2px 0 0}
+  .pub-author-meta{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px 24px;border-left:1px solid var(--rule);padding-left:clamp(20px,3vw,40px);
+  }
+  .pub-author-meta-item .label{
+    display:block;font-size:10.5px;color:var(--ink-40);letter-spacing:.14em;margin-bottom:4px;
+  }
+  .pub-author-meta-item .val{font-size:14.5px;font-weight:500;color:var(--ink)}
+  .pub-section{margin-top:36px;padding-top:32px;border-top:1px solid var(--rule)}
+  .pub-section-head{
+    font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--ink-40);
+    margin:0 0 18px;
+  }
+  .pub-abstract-wrap{max-width:105ch}
+  .pub-abstract-wrap p{
+    font-size:clamp(16.5px,1.2vw,18.5px);color:var(--ink);
+    line-height:1.72;margin:0 0 20px;
+  }
+  .pub-abstract-wrap p:last-child{margin-bottom:0}
+  .pub-grid-2col{
+    display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+    gap:clamp(24px,4vw,56px);
+  }
+  .pub-subjects{display:flex;flex-wrap:wrap;gap:8px 10px}
+  .pub-subject-tag{
+    display:inline-block;font-family:var(--mono);font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;
+    background:var(--paper-2);border:1px solid var(--rule);
+    padding:7px 13px;border-radius:2px;color:var(--blue);
+  }
+  .pub-provenance{font-size:14.5px;color:var(--ink-60);line-height:1.6;margin:0}
+  .pub-download-card{
+    background:var(--paper-2);border:1px solid var(--rule);
+    padding:clamp(26px,3.2vw,42px);border-radius:2px;
+    display:flex;flex-wrap:wrap;justify-content:space-between;
+    align-items:center;gap:24px;
+  }
+  .pub-download-info{max-width:65ch}
+  .pub-download-info h4{
+    font-family:var(--display);font-size:clamp(20px,1.6vw,23px);
+    font-weight:700;margin:0 0 6px;letter-spacing:-.01em;
+  }
+  .pub-download-info p{font-size:14.5px;color:var(--ink-60);margin:0;line-height:1.55}
+
+
+  /* open problems */
+  .problems{list-style:none;margin:clamp(30px,4vw,48px) 0 0;padding:0;
+            border-top:1px solid var(--rule)}
+  .problems li{
+    display:grid;grid-template-columns:44px minmax(0,1fr);gap:clamp(14px,2vw,28px);
+    padding:22px 0;border-bottom:1px solid var(--rule);
+    font-size:clamp(17px,1.5vw,21px);font-family:var(--display);font-weight:500;
+    letter-spacing:-.015em;line-height:1.4;
+  }
+  .problems .n{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+               color:var(--blue);padding-top:9px}
+  .problems .n b{color:var(--ink-40);font-weight:400}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);
+        gap:clamp(28px,5vw,64px);align-items:start}
+  .contact-card{border:1px solid var(--rule);background:var(--paper-2);padding:clamp(24px,3vw,34px)}
+  .contact-card dl{margin:0;display:grid;grid-template-columns:1fr;gap:0}
+  .contact-card .row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;
+                  border-bottom:1px solid var(--rule)}
+  .contact-card .row:last-child{border-bottom:0;padding-bottom:0}
+  .contact-card dt{color:var(--ink-40)}
+  .contact-card dd{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+
+  /* footer */
+  footer{background:var(--ink);color:#EDEFEA}
+  .foot{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,.6fr));
+        gap:clamp(28px,4vw,56px);padding-block:clamp(48px,6vw,76px) 22px}
+  .foot img{width:clamp(180px,20vw,240px);height:auto;display:block;margin-bottom:22px}
+  .foot p{color:rgba(237,239,234,.55);max-width:38ch;margin:0;font-size:15px}
+  .foot h4{color:rgba(237,239,234,.4);font-family:var(--mono);font-size:11px;font-weight:400;
+           letter-spacing:.18em;text-transform:uppercase;margin:0 0 16px}
+  .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+  .foot a{color:rgba(237,239,234,.78);text-decoration:none;font-size:15px;transition:.2s}
+  .foot a:hover{color:var(--lime)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;
+               border-top:1px solid rgba(237,239,234,.14);padding-block:20px 34px;
+               color:rgba(237,239,234,.4)}
+
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr}
+    .viz{max-width:400px;margin:8px 0 34px}
+    .viz figcaption{position:static;margin-top:14px}
+    .sec-head{grid-template-columns:1fr;gap:14px}
+    .sec-label{padding-top:0}
+    .areas{grid-template-columns:1fr}
+    .area:nth-child(even){padding-left:0;border-left:0}
+    .area:nth-child(odd){padding-right:0}
+    .pub{grid-template-columns:1fr;gap:10px}
+    .status{text-align:left}
+    .contact-grid{grid-template-columns:1fr}
+    .foot{grid-template-columns:1fr 1fr}
+    .foot > div:first-child{grid-column:1/-1}
+    .pub-author-card{grid-template-columns:1fr;gap:24px}
+    .pub-author-meta{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
+    .pub-grid-2col{grid-template-columns:1fr;gap:28px}
+  }
+  @media (max-width:700px){
+    .brand img{width:132px}
+    nav ul{gap:18px}
+    nav li:nth-child(1),nav li:nth-child(3){display:none}
+    .pub-detail-meta{flex-direction:column;align-items:flex-start;gap:8px}
+    .pub-author-meta{grid-template-columns:1fr;gap:12px}
+    .pub-download-card{flex-direction:column;align-items:flex-start}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Frontier Research Lab, home">
+      <img src="data:image/png;base64,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" alt="Frontier Research Lab">
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/problems">Open problems</a></li>
+        <li><a class="nav-mail" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div id="hero" class="wrap hero view-section">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow mono">Independent research lab <span>/ Agent authorization, memory, evaluation</span></p>
+        <h1>Systems can already rewrite themselves. <span class="dim">Authorization has not caught up.</span></h1>
+        <p class="lede">We study how authority, memory, and identity should behave inside software that acts without a human watching each step. What we conclude gets written up, argued with, and published.</p>
+        <div class="actions">
+          <a class="btn" href="/publications"><span class="dot"></span>Read the preprints</a>
+          <a class="link" href="/problems">Open problems</a>
+        </div>
+      </div>
+      <figure class="viz" aria-hidden="true" style="margin:0">
+        <div class="frame"><canvas id="sweep"></canvas></div>
+        <figcaption class="mono">Fig. 1 — Authority sweep: one operator, one boundary, one node held beyond it.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="position" class="view-section">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <p class="sec-label mono">Position</p>
+        <div class="prose">
+          <h2>The unit of control is not the action.</h2>
+          <p>Most of the field authorizes actions. That works while a model answers questions and stops working the moment the model can change its own policy, spawn a second agent, or inherit a session that was granted to someone else. By the time a harmful action appears, the decision that allowed it happened several steps earlier, in a place nobody was watching.</p>
+          <p>We think the unit is <strong>the operator and the handoff</strong>: the mechanism by which a system changes itself, and the moment one agent takes on another's authority. Hold those two above the agent, admit every self-change through a gate, re-bind identity per generation, keep a signed lineage, and a large amount of the remaining safety problem becomes ordinary engineering.</p>
+          <p>Frontier Research Lab was founded by Binod Kumar. We work in the open, publish negative results, and treat any claim we cannot reproduce as a claim we have not made.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="view-section">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <p class="sec-label mono">Research</p>
+        <div>
+          <h2>Four questions we are working on now.</h2>
+          <p class="lede" style="margin-bottom:0">Each line below is an active thread with a preprint, a reference implementation, or an evaluation attached to it.</p>
+        </div>
+      </div>
+      <div class="areas">
+        <article class="area">
+          <p class="mono tag">Self-modification</p>
+          <h3>Authorization for self-improving systems</h3>
+          <p>The improvement operator, not the improved behaviour, is what should be authorized. Admission control on every self-change, identity re-bound per generation, lineage signed and reversible.</p>
+        </article>
+        <article class="area">
+          <p class="mono tag">Delegation</p>
+          <h3>Trust across agent boundaries</h3>
+          <p>The handoff is the confused deputy restated for agents. We work on attenuated short-lived capability, bounded delegation depth, and audit chains that survive a third hop.</p>
+        </article>
+        <article class="area">
+          <p class="mono tag">Memory</p>
+          <h3>Governed memory and retrieval</h3>
+          <p>What a system is permitted to remember, who it is remembering for, and what retrieval owes an auditor. Identity-scoped stores compared against retrieval-only architectures.</p>
+        </article>
+        <article class="area">
+          <p class="mono tag">Evaluation</p>
+          <h3>Measuring computer-use agents</h3>
+          <p>Task success hides the interesting failures. We score trajectories on the authority they consumed, not only on whether the task closed, building on public computer-use benchmarks.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="view-section">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <p class="sec-label mono">Publications</p>
+        <div>
+          <h2>The Frontier Research Series.</h2>
+          <p class="lede" style="margin-bottom:0">Preprints are reviewed internally and by outside researchers before they are archived. Status is stated plainly on every entry.</p>
+        </div>
+      </div>
+      <div class="pubs">
+        <div class="pub">
+          <span class="meta mono">Research Paper</span>
+          <span>
+            <h3><a href="/publications/a-field-guide-to-agent-harness-engineering" class="pub-link">A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents" data-file="research paper/A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents.docx"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Working Paper</span>
+          <span>
+            <h3><a href="/publications/aar-wp-2026-21-working-paper" class="pub-link">AAR-WP-2026-21 Working Paper</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="AAR-WP-2026-21 Working Paper" data-file="research paper/AAR-WP-2026-21_Working_Paper.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Research Paper</span>
+          <span>
+            <h3><a href="/publications/agent-to-agent-handoff-problem" class="pub-link">Agent to Agent Handoff Problem</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Agent to Agent Handoff Problem" data-file="research paper/Agent to Agent Handoff Problem.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Preprint</span>
+          <span>
+            <h3><a href="/publications/closing-the-handoff-gap-attenuated-agent-delegation" class="pub-link">Closing the Handoff Gap: Attenuated Agent Delegation</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Closing the Handoff Gap: Attenuated Agent Delegation" data-file="research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Preprint</span>
+          <span>
+            <h3><a href="/publications/authorization-for-self-improving-agents" class="pub-link">Authorization for Self-Improving Agents</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Authorization for Self-Improving Agents" data-file="research paper/Authorization-for-Self-Improving-Agents.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Research Paper</span>
+          <span>
+            <h3><a href="/publications/inference-is-the-new-frontier-2" class="pub-link">Inference Is the New Frontier 2</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Inference Is the New Frontier 2" data-file="research paper/Inference-Is-the-New-Frontier_2.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Preprint</span>
+          <span>
+            <h3><a href="/publications/rag-is-not-memory-preprint" class="pub-link">RAG Is Not Memory Preprint</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="RAG Is Not Memory Preprint" data-file="research paper/RAG Is Not Memory Preprint.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+        <div class="pub">
+          <span class="meta mono">Technical Preprint</span>
+          <span>
+            <h3><a href="/publications/the-verification-bottleneck-technical-preprint" class="pub-link">The Verification Bottleneck Technical Preprint</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="The Verification Bottleneck Technical Preprint" data-file="research paper/The-Verification-Bottleneck-Technical-Preprint.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publication-detail" class="view-section">
+    <div class="wrap sec">
+      <div id="pubDetailContent">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section id="problems" class="view-section">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <p class="sec-label mono">Open problems</p>
+        <div>
+          <h2>Unsolved, and worth your time.</h2>
+          <p class="lede" style="margin-bottom:0">If you have an answer, a counterexample, or a sharper version of the question, we would like to read it.</p>
+        </div>
+      </div>
+      <ol class="problems">
+        <li><span class="n"><b>P</b>1</span><span>What is the right admission-control primitive for a policy that modifies itself between evaluations?</span></li>
+        <li><span class="n"><b>P</b>2</span><span>Can capability attenuation survive three delegation hops without a central gateway?</span></li>
+        <li><span class="n"><b>P</b>3</span><span>What does tamper-evident lineage cost at production throughput, and where does the cost stop being worth paying?</span></li>
+        <li><span class="n"><b>P</b>4</span><span>Is an authority-accounted trajectory score reproducible across labs, or does it encode the harness it was written in?</span></li>
+      </ol>
+    </div>
+  </section>
+
+  
+  <section id="contact" class="view-section">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <p class="sec-label mono">Contact</p>
+        <div class="contact-grid">
+          <div class="prose">
+            <h2>Have a question, research idea, collaboration proposal, or feedback?</h2>
+            <p>We read everything that arrives. Send a paper, a repository, a benchmark you disagree with, or a two-paragraph argument for why one of the open problems above is stated wrong.</p>
+
+          </div>
+          <div class="contact-card">
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: 16px;">
+               <div style="display: flex; flex-direction: column; gap: 4px;">
+                 <label for="fullName" class="mono" style="color:var(--ink-40); font-size:11px;">Full Name *</label>
+                 <input type="text" id="fullName" name="fullName" required autocomplete="name" style="padding: 12px; border: 1px solid var(--rule); border-radius: 2px; font-family: var(--body); font-size: 15px; background: var(--paper-2); outline: none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--rule)'">
+               </div>
+               <div style="display: flex; flex-direction: column; gap: 4px;">
+                 <label for="phone" class="mono" style="color:var(--ink-40); font-size:11px;">Phone Number *</label>
+                 <input type="tel" id="phone" name="phone" required autocomplete="tel" style="padding: 12px; border: 1px solid var(--rule); border-radius: 2px; font-family: var(--body); font-size: 15px; background: var(--paper-2); outline: none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--rule)'">
+               </div>
+               <div style="display: flex; flex-direction: column; gap: 4px;">
+                 <label for="email" class="mono" style="color:var(--ink-40); font-size:11px;">Email Address *</label>
+                 <input type="email" id="email" name="email" required autocomplete="email" style="padding: 12px; border: 1px solid var(--rule); border-radius: 2px; font-family: var(--body); font-size: 15px; background: var(--paper-2); outline: none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--rule)'">
+               </div>
+               <div style="display: flex; flex-direction: column; gap: 4px;">
+                 <label for="message" class="mono" style="color:var(--ink-40); font-size:11px;">Message *</label>
+                 <textarea id="message" name="message" rows="4" required style="padding: 12px; border: 1px solid var(--rule); border-radius: 2px; font-family: var(--body); font-size: 15px; background: var(--paper-2); resize: vertical; outline: none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--rule)'"></textarea>
+               </div>
+               <input type="hidden" name="_subject" value="New Contact Form Submission - Frontier Research Lab">
+               <input type="hidden" name="_replyto" id="_replyto">
+               <div id="formStatus" style="font-size: 14px; margin-top: 4px; display: none;"></div>
+               <button type="submit" id="submitBtn" class="btn" style="align-self: flex-start; margin-top: 8px; border: none; cursor: pointer; font-family: var(--mono);"><span class="dot"></span><span id="btnText">Submit</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terms" class="view-section">
+    <div class="wrap sec" style="max-width: 850px; margin: 0 auto;">
+      <div class="sec-head" style="grid-template-columns: 1fr;">
+        <p class="sec-label mono" style="margin-bottom: 24px;">Legal</p>
+        <div class="prose">
+          <h2 style="font-size: clamp(32px,4vw,46px); margin-bottom: 12px;">Terms of Service</h2>
+          <p class="mono" style="color: var(--ink-40); margin-bottom: 48px;">Last updated: August 26, 2026</p>
+          
+          <h3>1. Acceptance of Terms</h3>
+          <p>By accessing or using the Frontier Research Lab website (frontierresearchlab.org), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you should discontinue use of the website.</p>
+          
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+          
+          <h3>2. About Frontier Research Lab</h3>
+          <p>Frontier Research Lab is an independent research entity studying authority, memory, and evaluation for autonomous systems. We publish open-source research and preprints.</p>
+          
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>3. Website Use</h3>
+          <p>This website is provided for informational and educational purposes. You agree to use the site and its contents responsibly and in compliance with applicable laws.</p>
+          
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>4. Research and Educational Content</h3>
+          <p>All research papers, models, and text on this website are provided strictly for research purposes. We make no guarantees about the fitness of any research material for commercial production environments.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>5. Intellectual Property</h3>
+          <p>The content, branding, and visual identity of this website are the property of Frontier Research Lab. You may not reproduce the website's design or branding without permission.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>6. Research Papers and Downloads</h3>
+          <p>Downloading our research preprints does not transfer copyright. You may read, cite, and reference these materials subject to standard academic and fair use practices.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>7. Third-Party Links and Services</h3>
+          <p>Our website may contain links to external sites or use third-party services (such as contact forms). We do not control these external services and their own terms and privacy policies will apply.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>8. No Professional or Legal Advice</h3>
+          <p>Nothing on this website constitutes legal, financial, medical, or professional advice. Our research is provided "as is."</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>9. Accuracy of Information</h3>
+          <p>While we strive for accuracy, the field of AI research changes rapidly. We may update, correct, or remove content at any time without notice.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>10. Website Availability</h3>
+          <p>We do not guarantee that the website will be available at all times. We reserve the right to modify or suspend the website.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>11. Prohibited Uses</h3>
+          <p>You agree not to use the website or our contact form for spam, harassment, malicious activities, or attempting to compromise our server infrastructure.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>12. Contact Form and Communications</h3>
+          <p>When you use our contact form, you agree to provide accurate information. We reserve the right to ignore or block communications that violate these terms.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>13. Limitation of Liability</h3>
+          <p>To the fullest extent permitted by law, Frontier Research Lab and its researchers shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website or reliance on our research.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>14. Changes to These Terms</h3>
+          <p>We may revise these Terms of Service at any time. The date of the latest revision will be displayed at the top of this page.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>15. Governing Law</h3>
+          <p>These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>16. Contact Information</h3>
+          <p>For questions regarding these Terms, please contact us at <a class="link" href="mailto:frontierresearchlab@gmail.com">frontierresearchlab@gmail.com</a>.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" class="view-section">
+    <div class="wrap sec" style="max-width: 850px; margin: 0 auto;">
+      <div class="sec-head" style="grid-template-columns: 1fr;">
+        <p class="sec-label mono" style="margin-bottom: 24px;">Legal</p>
+        <div class="prose">
+          <h2 style="font-size: clamp(32px,4vw,46px); margin-bottom: 12px;">Privacy Policy</h2>
+          <p class="mono" style="color: var(--ink-40); margin-bottom: 48px;">Last updated: August 26, 2026</p>
+          
+          <h3>1. Introduction</h3>
+          <p>Frontier Research Lab respects your privacy. This Privacy Policy explains how we handle any information collected when you visit frontierresearchlab.org. We operate a simple, static website designed to share our research with the public.</p>
+          
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+          
+          <h3>2. Information We Collect</h3>
+          <p>Because our website is a static site without user accounts or tracking tools, we collect minimal information. We only receive personal information when you explicitly choose to provide it to us, such as when filling out our contact form.</p>
+          
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>3. Information Submitted Through Contact Forms</h3>
+          <p>When you use our Contact page, you are asked to provide your Name, Phone Number, Email Address, and a Message. This information is processed by a secure third-party form provider (e.g., Formspree) and transmitted directly to our email inbox.</p>
+          
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>4. How We Use Information</h3>
+          <p>The information you provide is used solely to read your message and, if appropriate, to respond to your inquiry, collaboration proposal, or feedback. We do not use your information for marketing or advertising.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>5. Email Communications</h3>
+          <p>If you email us directly at frontierresearchlab@gmail.com, we will have your email address and any other information you include in your message. We keep this correspondence confidential within our lab.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>6. Research Paper Downloads</h3>
+          <p>Our research papers and preprints are hosted as direct static file downloads. We do not require registration or an email address to download our materials.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>7. Cookies and Analytics</h3>
+          <p>Our website is entirely static. We do not currently use cookies, Google Analytics, tracking pixels, or other behavioral tracking mechanisms to monitor visitors.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>8. Third-Party Services</h3>
+          <p>To ensure our website remains secure and functional, we rely on standard web hosting infrastructure (such as Nginx and Cloudflare) which may collect basic server logs (like IP addresses) necessary for security and DDoS protection. Our contact form relies on a third-party form provider, which processes submissions subject to their own privacy policy.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>9. Data Retention</h3>
+          <p>We retain emails and contact form submissions only as long as necessary to address the nature of your inquiry. We do not maintain a permanent CRM or marketing database of individuals who contact us.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>10. Data Security</h3>
+          <p>While we do not store sensitive user data on our servers, we protect our email communications and hosting accounts using industry-standard security practices. However, no internet transmission is perfectly secure.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>11. Children's Privacy</h3>
+          <p>Our research website is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>12. International Visitors</h3>
+          <p>If you are visiting from outside the region where our servers are located, your communication with us may result in the transfer of your information across international borders. By contacting us, you consent to this transfer.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>13. Your Privacy Rights</h3>
+          <p>Depending on your jurisdiction, you may have rights to request access to, correction of, or deletion of personal information you have sent us. You may exercise these rights by contacting us directly.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>14. Changes to This Privacy Policy</h3>
+          <p>We may update this policy occasionally to reflect changes in our website structure or legal obligations. The most current version will always be available at this URL.</p>
+
+          <div style="height: 1px; background: var(--rule); margin: 32px 0;"></div>
+
+          <h3>15. Contact Information</h3>
+          <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a class="link" href="mailto:frontierresearchlab@gmail.com">frontierresearchlab@gmail.com</a>.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Modal -->
+  <div id="downloadModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(13,17,21,0.7); backdrop-filter:blur(6px); z-index:100; align-items:center; justify-content:center;">
+    <div style="background:var(--paper-2); border:1px solid var(--rule); border-radius:4px; max-width:480px; width:90%; padding:32px; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
+      <button id="closeModalBtn" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--ink-60);">&times;</button>
+      <p class="mono" style="color:var(--blue); margin:0 0 8px;">Request Research Paper</p>
+      <h3 id="modalPaperTitle" style="font-family:var(--display); font-size:20px; font-weight:700; margin:0 0 16px; line-height:1.3;"></h3>
+      <p style="font-size:14px; color:var(--ink-60); margin:0 0 24px;">Enter your email address below. We will send the full research paper directly to your inbox from <strong>frontierresearchlabb@gmail.com</strong>.</p>
+      <form id="downloadForm" style="display:flex; flex-direction:column; gap:14px;">
+        <input type="hidden" id="modalPaperFile">
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <label for="dlEmail" class="mono" style="color:var(--ink-40); font-size:11px;">Email Address *</label>
+          <input type="email" id="dlEmail" required placeholder="name@domain.com" style="padding:12px; border:1px solid var(--rule); border-radius:2px; font-family:var(--body); font-size:15px; background:var(--paper); outline:none;">
+        </div>
+        <div id="dlFormStatus" style="font-size:14px; display:none;"></div>
+        <button type="submit" id="dlSubmitBtn" class="btn" style="border:none; cursor:pointer; align-self:flex-start; margin-top:6px;"><span class="dot"></span><span id="dlBtnText">Send Paper to Email</span></button>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  
+  <div class="wrap foot">
+    <div>
+      <img src="data:image/png;base64,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" alt="Frontier Research Lab">
+      <p>An independent lab working on authorization, memory, and evaluation for systems that act on their own.</p>
+    </div>
+    <div>
+      <h4>Research</h4>
+      <ul>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/problems">Open problems</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom mono">
+    <span>© 2026 Frontier Research Lab</span>
+    <span>Preprints carry a status line until an archive identifier resolves</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header=document.getElementById('top');
+  addEventListener('scroll',function(){
+    header.classList.toggle('scrolled', scrollY>8);
+  },{passive:true});
+
+  var c=document.getElementById('sweep'), ctx=c.getContext('2d');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var INK='13,17,21', BLUE='#001ACF', LIME='#C4EA02';
+  var size=0, dpr=Math.min(devicePixelRatio||1,2);
+
+  function fit(){
+    var r=c.parentNode.getBoundingClientRect();
+    size=Math.max(240,r.width);
+    c.width=size*dpr; c.height=size*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  // rings echo the mark: heavy open arcs at different speeds, aligning slowly
+  var rings=[
+    {r:0.470,span:2.10,base:-0.35,spd:0.0000180,w:0.020,c:'ink',o:0.88},
+    {r:0.385,span:2.55,base: 1.95,spd:-0.0000255,w:0.013,c:'ink',o:0.30},
+    {r:0.315,span:1.95,base:-0.70,spd:0.0000330,w:0.022,c:'blue',o:1},
+    {r:0.232,span:2.40,base: 2.35,spd:-0.0000205,w:0.013,c:'ink',o:0.30},
+    {r:0.150,span:2.30,base: 0.60,spd:0.0000420,w:0.022,c:'blue',o:1}
+  ];
+
+  function draw(t){
+    var R=size, m=size/2;
+    ctx.clearRect(0,0,size,size);
+    ctx.lineCap='butt';
+    for(var i=0;i<rings.length;i++){
+      var g=rings[i], a=g.base + (reduce?0:t*g.spd);
+      ctx.beginPath();
+      ctx.arc(m,m,g.r*R,a,a+g.span);
+      ctx.lineWidth=Math.max(1.4,g.w*R);
+      ctx.strokeStyle = g.c==='blue' ? BLUE : 'rgba('+INK+','+g.o+')';
+      ctx.stroke();
+    }
+    var ang=reduce?-0.86:(-0.86+Math.sin(t/16000)*0.62);
+    var len=0.398*R;
+    var ex=m+Math.cos(ang)*len, ey=m+Math.sin(ang)*len;
+    ctx.beginPath(); ctx.moveTo(m,m); ctx.lineTo(ex,ey);
+    ctx.lineWidth=Math.max(2,0.011*R); ctx.strokeStyle=BLUE; ctx.stroke();
+    [[m,m,0.021*R],[ex,ey,0.024*R]].forEach(function(n){
+      ctx.beginPath(); ctx.arc(n[0],n[1],Math.max(4,n[2]),0,6.2832);
+      ctx.fillStyle=LIME; ctx.fill();
+    });
+  }
+
+  function loop(t){ draw(t); requestAnimationFrame(loop); }
+  addEventListener('resize',function(){fit();if(reduce)draw(0);});
+  fit();
+  if(reduce){draw(0);} else {requestAnimationFrame(loop);}
+
+  // === PUBLICATION DATA ===
+  var PUBLICATIONS_DATA = [
+    {
+      slug: 'a-field-guide-to-agent-harness-engineering',
+      title: 'A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents',
+      subtitle: 'The Architecture Behind Reliable AI Agents: Governing Observation, Action, Memory, Recovery, and Verification in Autonomous Systems',
+      type: 'Research Paper',
+      status: 'In review',
+      author: 'Dr. Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai · AI Research Mentor',
+      authorAffiliation: 'Indian Institute of Technology Bombay & Banaras Hindu University',
+      labAffiliation: 'Frontier Research Series',
+      date: 'June 2026',
+      series: 'Frontier Research Series',
+      format: 'DOCX / Research Paper',
+      subjects: ['Agent Harness Architecture', 'AI Safety & Governance', 'Runtime Systems', 'Autonomous Verification', 'Labeled Transition Systems'],
+      abstract: [
+        'For most of the last three years, the implicit thesis of agentic AI has been simple: a better model produces a better agent. Buy the frontier model, write a good prompt, wire up some tools, and reliability follows. Between March and June 2026, a cluster of papers landed that, read together, argue something close to the opposite. The binding constraint on real-world agent reliability is increasingly not the model. It is the harness — the runtime system that wraps the model and governs how it observes, acts, remembers, recovers, and is verified.',
+        'This is not a vocabulary game. It changes how you staff a team, where you spend compute budget, what you put in a benchmark, and what you can honestly promise a board. Below I work through seven papers, group them into a coherent picture, and end with what I think it means in practice. References are listed in full at the end so the claims here are traceable to their sources rather than to me.',
+        'Agent capability is increasingly externalized out of model weights and into the surrounding runtime — and the engineering of that runtime, the harness, is now a first-class determinant of system behavior. Drawing on Donald Norman\'s idea of cognitive artifacts, agent infrastructure matters not because it bolts on extra parts, but because it transforms a hard cognitive burden into an easier one — the way a shopping list turns "recall the items" into "recognize the items," or a map turns hidden spatial relationships into visible structure. In their taxonomy: memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and the harness is the unification layer that coordinates all of them into governed execution.'
+      ],
+      file: 'research paper/A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents.docx'
+    },
+    {
+      slug: 'aar-wp-2026-21-working-paper',
+      title: 'AAR-WP-2026-21 Working Paper',
+      subtitle: 'Governance Is the Moat: An Agentic Authority Architecture for Enterprise AI in the Era of Autonomous Offensive Capability',
+      type: 'Working Paper',
+      status: 'In review',
+      author: 'Dr. Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai · Adjunct Lecturer and AI Research Mentor',
+      authorAffiliation: 'Indian Institute of Technology',
+      labAffiliation: 'AgentsArchitects.ai Research · Working Paper AAR-WP-2026-01',
+      date: 'April 2026',
+      series: 'AgentsArchitects.ai Research Working Paper',
+      format: 'PDF (23 pages)',
+      subjects: ['Enterprise AI Governance', 'Autonomous Offensive Capability', 'NIST AI RMF', 'Authority Architecture', 'MITRE ATLAS'],
+      abstract: [
+        'In April 2026, two frontier AI laboratories independently disclosed models capable of autonomous end-to-end compromise of simulated enterprise networks, autonomous discovery of zero-day vulnerabilities across every major operating system and browser, and working exploit generation at a cost of approximately fifty United States dollars per run. These disclosures, corroborated by independent evaluation from the United Kingdom AI Safety Institute, mark a qualitative inflection in the asymmetry between enterprise defenders and AI-enabled adversaries.',
+        'This working paper argues that the resulting risk environment is inadequately addressed by existing enterprise security and AI governance frameworks taken in isolation, and that a composite architecture is required. We propose the Agentic Authority Architecture (AAA) Framework: a four-layer governance model spanning Identity, Authorization, Attestation, and Accountability, applied across three actor classes — human principals, autonomous agents, and delegated capabilities.',
+        'The framework is designed to extend the National Institute of Standards and Technology AI Risk Management Framework (NIST AI RMF 1.0 and the AI 600-1 Generative AI Profile), operationalize the CISA, NSA, and FBI joint guidance on secure AI integration, and provide enterprise boards with a measurable governance substrate for the autonomous agent era. We synthesize observations from over one hundred and twenty enterprise AI engagements across financial services, pharmaceutical manufacturing, healthcare payers, aviation and defense supply chains, and professional services, conducted between 2022 and 2026. We map the AAA Framework against the NIST AI RMF core functions and MITRE ATLAS adversarial taxonomy, and propose a phased ninety-day implementation pathway.'
+      ],
+      file: 'research paper/AAR-WP-2026-21_Working_Paper.pdf'
+    },
+    {
+      slug: 'agent-to-agent-handoff-problem',
+      title: 'Agent to Agent Handoff Problem',
+      subtitle: 'Session Trust and Privilege Escalation Across Agent Boundaries',
+      type: 'Research Paper',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai',
+      authorAffiliation: 'Mentor, Indian Institute of Technology Bombay and Banaras Hindu University',
+      labAffiliation: 'AuthClaw Foundation & AGI Learning Hub, India',
+      date: 'March 2026',
+      series: 'Frontier Research Series',
+      format: 'PDF (9 pages)',
+      subjects: ['Multi-Agent Systems', 'Trust Boundaries', 'Privilege Escalation', 'Confused Deputy', 'OAuth Token Exchange'],
+      abstract: [
+        'The industry spent 2024 and 2025 learning how to secure the individual agent. The problem still open in 2026 is securing the handoff: the moment one agent passes work to another and a trust boundary gets crossed without anyone checking it. Consider what happens when Agent A asks Agent B to deploy something to production, or to pull a customer\'s records. Three questions go unanswered, and they go unanswered at machine speed. Did A really hold the authority it just passed on? Will B end up with more access than it should? And whose human authorization, if anyone\'s, still sits behind the action four hops down the chain? In most production multi-agent systems today, nobody checks any of the three.',
+        'This is not a new vulnerability. It is the confused deputy problem, known in distributed systems since 1988, showing up again in a setting that makes it far more dangerous, because agents are autonomous, act asynchronously, delegate recursively, and increasingly cross organizational lines. The defenses built for human-to-service authorization, such as OAuth, SAML and OIDC, carry assumptions that agents break.',
+        'For a Chief AI Officer the takeaway is uncomfortable but simple: if your threat model still treats an AI agent as a passive query tool, your multi-agent rollout is already moving faster than your identity controls. For a researcher, proving which human authorized which action across a recursive delegation chain remains unsolved, and it is a problem where real progress can be made.'
+      ],
+      file: 'research paper/Agent to Agent Handoff Problem.pdf'
+    },
+    {
+      slug: 'closing-the-handoff-gap-attenuated-agent-delegation',
+      title: 'Closing the Handoff Gap: Attenuated Agent Delegation',
+      subtitle: 'A Reference Architecture for Attenuated Agent Delegation: Verifiable, Monotonic, Cross-Domain Delegation for Multi-Agent Systems',
+      type: 'Preprint',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai',
+      authorAffiliation: 'Produced for and with Frontier Research Lab',
+      labAffiliation: 'Frontier Research Lab · cs.CR',
+      date: 'August 2026',
+      series: 'Frontier Research Series Preprints',
+      format: 'PDF (13 pages)',
+      subjects: ['cs.CR (Cryptography and Security)', 'Attenuated Delegation Credential', 'Monotonic Capabilities', 'Multi-Agent Security', 'SPIFFE/SPIRE'],
+      abstract: [
+        'The agent-to-agent handoff, the moment one AI agent passes work to another, is the seam along which multi-agent systems most often fail. As a companion analysis argues, three structural breakages compound at each hop: identity collapse, where the agent\'s identity replaces the human\'s; non-attenuation, where privilege never narrows as it is forwarded; and loss of the anchor, where no deployed protocol can prove which human authorized which action three or four hops down a recursive, cross-domain delegation chain. The result is a confused deputy at machine speed.',
+        'This paper moves from diagnosis to construction. We present the Attenuated Delegation Credential (adc), a public-key, caveat-based capability whose scope can only ever narrow as it is delegated, and whose chain of signed blocks makes the originating human and every intermediary agent cryptographically verifiable at any depth, across trust domains, without pre-arranged federation. Around it we specify a reference architecture: workload-attested agent identities, an identity-aware enforcement gateway at every boundary, just-in-time attenuated minting, per-action runtime authorization, a tamper-evident transparency log, and depth-bounded delegation with human checkpoints for high-impact actions.',
+        'We give a formal model and prove five properties: monotone attenuation, intersection-ceiling safety (which reduces the confused-deputy condition to a policy violation the gateway rejects), attribution soundness under existential unforgeability, bounded delegation depth, and contagion containment. We describe a prototype composed from SPIFFE/SPIRE, biscuit-style tokens, Open Policy Agent, and a Merkle transparency log, and give an analytical cost model with illustrative, to-be-validated overhead figures. The architecture satisfies all seven session-trust requirements simultaneously and provably blocks four attack classes, namely injection-driven confused deputy, authority re-delegation contagion, cross-organization token pivots, and identity collapse, that the current composition of OAuth, SPIFFE, or macaroons alone does not.'
+      ],
+      file: 'research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf'
+    },
+    {
+      slug: 'authorization-for-self-improving-agents',
+      title: 'Authorization for Self-Improving Agents',
+      subtitle: 'Governing Self-Modification at the Capability Boundary',
+      type: 'Preprint',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'Founder and Chief AI Officer, AgentsArchitects.ai',
+      authorAffiliation: 'Mentor at E-Cell, IIT Bombay and IIT (BHU) Varanasi, India',
+      labAffiliation: 'Frontier Research Series · AuthClaw Foundation & AGI Learning Hub',
+      date: 'July 2026',
+      series: 'Frontier Research Series Preprints',
+      format: 'PDF (11 pages)',
+      subjects: ['Self-Improving Systems', 'Capability Boundaries', 'Admission Control', 'Lineage Verification', 'Reference Monitors'],
+      abstract: [
+        'For three years, the enterprise security community has worked on a well-posed question: given an autonomous agent, which actions may it take, on which resources, under which conditions. The industry has answered it competently. The Model Context Protocol now treats servers as OAuth 2.1 resource servers with audience-bound tokens, the Agent2Agent protocol gives agents discoverable identities, and policy engines mediate calls at runtime. These are real advances, and they share one assumption: the agent is a fixed artifact whose set of possible actions is enumerable and authored by a person.',
+        'That assumption is being retired in production. Recursive self-improvement has moved from thought experiment to deployed practice. Systems now rewrite their own prompts, edit their own tool configurations, curate their own memory, and, in research settings, modify the code and weights of their own successors. When an agent can change itself, the security question changes with it. The action set tomorrow is not the action set today, the change was written by the agent, and no operator signed it.',
+        'This paper argues that the unit of authorization for a self-improving agent is not the action and not the improved behavior. It is the improvement operator: the mechanism by which the agent changes itself. A static system asks one question, may this action proceed. A self-modifying system is forced to ask a second and harder one, may this change to the agent proceed, including changes to the component that answers the first question. The second question dominates, because a change to the authorizer silently rewrites the answer to every future instance of the first.',
+        'The failure this creates is authority amplification through self-modification, and it is structural rather than accidental. It requires no adversary, though adversaries make it worse. It is a modern instance of two classical results: the reference monitor requirement that the mechanism deciding access be tamper-proof and non-bypassable, and the confused deputy, in which a component is induced to exercise authority it holds but should not use in a given setting. We review the state of the art, define the problem formally, evaluate why existing technologies each address part of the problem but none the whole, and present an original architecture in which the improvement operator is held above the agent, every self-change is admission-controlled, identity is re-bound at each generation, and the loop is kept reversible.'
+      ],
+      file: 'research paper/Authorization-for-Self-Improving-Agents.pdf'
+    },
+    {
+      slug: 'inference-is-the-new-frontier-2',
+      title: 'Inference Is the New Frontier 2',
+      subtitle: 'Why the Decode Loop, Not the Model, Now Decides Enterprise AI Economics',
+      type: 'Research Paper',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai',
+      authorAffiliation: 'Mentor at E-Cell, IIT Bombay and Banaras Hindu University, India',
+      labAffiliation: 'Frontier Research Series · AuthClaw Foundation & AGI Learning Hub',
+      date: 'June 2026',
+      series: 'Frontier Research Series',
+      format: 'PDF (9 pages)',
+      subjects: ['Inference Systems', 'Speculative Decoding', 'Decode Loop Latency', 'AI Economics', 'Vocabulary Speculation'],
+      abstract: [
+        'The industry spent the last three years learning how to train and pick models. The problem still open in 2026 is how to serve them, because the cost, speed, and margin of an enterprise AI product are now set inside the decode loop rather than inside the model weights. Consider a customer-facing assistant that answers in two seconds at a hundred concurrent users and in nine seconds at ten thousand. Nothing about the model changed between those two states. What changed was the serving regime, and that regime is now where the money is won or lost.',
+        'This paper argues that inference has become a first-class systems-engineering discipline, and that recent research on speculative decoding makes the point concrete. A measurement study of speculative decoding on a production engine found that verification by the target model, not drafting, dominates execution time, and that the real speedup falls well short of the theoretical bound. New methods answer that finding from two directions: SpecVocab attacks the cost of the draft step by speculating on which slice of the vocabulary to compute, and DSpark attacks the verification step by scheduling how much to verify against live hardware load. The underlying lesson is an old one in systems work, the difference between a microbenchmark and a production workload, only newly expensive.',
+        'For a Chief AI Officer the takeaway is uncomfortable but simple: your unit cost and your latency are properties of how you serve, not of which model you bought, and a competitor on the same model can beat you on both. For a researcher, the open questions are about adaptive, load-aware, lossless inference and how to certify it. The thesis is narrower and more useful than "inference matters now": the decode loop is a tunable system with its own failure modes, and treating it as a fixed cost is the mistake.'
+      ],
+      file: 'research paper/Inference-Is-the-New-Frontier_2.pdf'
+    },
+    {
+      slug: 'rag-is-not-memory-preprint',
+      title: 'RAG Is Not Memory Preprint',
+      subtitle: 'Why Retrieval and Memory Are Different Systems, and What the Confusion Costs the Enterprise',
+      type: 'Preprint',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai',
+      authorAffiliation: 'Mentor at E-Cell, IIT Bombay and Banaras Hindu University, India',
+      labAffiliation: 'Frontier Research Series · AuthClaw Foundation & AGI Learning Hub',
+      date: 'June 2026',
+      series: 'Frontier Research Series Preprints',
+      format: 'PDF (8 pages)',
+      subjects: ['Retrieval Systems', 'Stateful Memory', 'Vector Search Limitations', 'Enterprise Knowledge Architecture'],
+      abstract: [
+        'The industry spent the last two years learning how to bolt knowledge onto a language model. The move almost everyone made was retrieval-augmented generation, and somewhere along the way the field began calling it memory. It is not memory. RAG is a read-time mechanism that fetches passages from a fixed, externally curated corpus and places them in the context window. Memory is a stateful substrate that an agent writes to and reads from, holding what it learns about its own experience, its users, and a world that keeps changing. The two share one primitive, vector similarity search, which is why they get confused, and why the confusion stays hidden until it has already cost something. A system built for retrieval can fetch a document. It cannot learn from an interaction, personalize, resolve a contradiction, or reason about time.',
+        'For a Chief AI Officer the takeaway is blunt: if your agents remember by searching their own old messages, they will keep forgetting what matters, and at enterprise scale that forgetting becomes a governance, cost, and security problem rather than a quality one. For a researcher, retrieval that is native to memory, meaning bounded, temporal, attenuable, and auditable, is still largely unbuilt, and that is where real progress can be made. The thesis is not that RAG is dead. It is narrower and more useful than that: naive RAG is the wrong abstraction for memory, and treating retrieval as memory is an architectural mistake that compounds with scale and autonomy.'
+      ],
+      file: 'research paper/RAG Is Not Memory Preprint.pdf'
+    },
+    {
+      slug: 'the-verification-bottleneck-technical-preprint',
+      title: 'The Verification Bottleneck Technical Preprint',
+      subtitle: 'Toward Adaptive, Lossless Speculative Decoding for Autoregressive Language Models',
+      type: 'Technical Preprint',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'AgentsArchitects.ai',
+      authorAffiliation: 'Mentor, E-Cell, Indian Institute of Technology Bombay and Banaras Hindu University',
+      labAffiliation: 'Frontier Research Series',
+      date: 'June 2026',
+      series: 'Frontier Research Series Technical Preprints',
+      format: 'PDF (8 pages)',
+      subjects: ['Speculative Decoding', 'Verification Bottleneck', 'Autoregressive Inference', 'Lossless Acceleration', 'Adaptive Scheduling'],
+      abstract: [
+        'Speculative decoding accelerates autoregressive language-model inference by proposing tokens with a cheap draft model and verifying them in parallel with the target model, preserving the target output distribution exactly. Most of the literature has optimized the draft: better draft architectures, tree-structured proposals, and reduced draft vocabularies. A recent systematic measurement of speculative decoding on a production engine complicates that focus. It reports that verification by the target model, not drafting, dominates end-to-end execution, that acceptance length varies sharply across token positions, requests, and datasets, and that observed speedups fall well short of the theoretical bound. This survey takes that finding as its organizing question and maps the design space it implies.',
+        'We formalize speculative decoding as a three-term latency model, separate draft-side from verify-side optimization, and place recent methods within it. On the draft side, we examine the vocabulary projection bottleneck and the move from static reduced vocabularies (FR-Spec, VocabTrim, EAGLE-3) to per-step vocabulary speculation (SpecVocab). On the verify side, we examine semi-autoregressive drafting and load-aware, confidence-scheduled verification (DSpark).',
+        'We argue that the field is converging on a single under-formalized object: an inference procedure that is adaptive to live load and per-token acceptance, while remaining lossless with respect to the target distribution. We state seven properties such a procedure must satisfy, show that no current method satisfies all seven, and close with six open problems, the sharpest of which is reducing the per-token cost of verification itself rather than the cost of the draft.'
+      ],
+      file: 'research paper/The-Verification-Bottleneck-Technical-Preprint.pdf'
+    }
+  ];
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function renderPublicationDetailHtml(pub) {
+    var subjectsHtml = (pub.subjects || []).map(function(s) {
+      return '<span class="pub-subject-tag mono">' + escapeHtml(s) + '</span>';
+    }).join('');
+
+    var abstractParagraphs = Array.isArray(pub.abstract) ? pub.abstract : [pub.abstract];
+    var abstractHtml = abstractParagraphs.map(function(p) {
+      return '<p>' + escapeHtml(p) + '</p>';
+    }).join('');
+
+    return '<div class="pub-detail-wrap">' +
+      '<a href="/publications" class="pub-detail-back mono">← Back to Publications</a>' +
+      '<div class="pub-detail-meta mono">' +
+        '<span class="type">' + escapeHtml(pub.type) + '</span>' +
+        '<span class="status">' + escapeHtml(pub.status) + '</span>' +
+      '</div>' +
+      '<h1 class="pub-detail-title">' + escapeHtml(pub.title) + '</h1>' +
+      (pub.subtitle ? '<p class="pub-detail-subtitle">' + escapeHtml(pub.subtitle) + '</p>' : '') +
+      
+      '<div class="pub-author-card">' +
+        '<div class="pub-author-main">' +
+          '<span class="pub-author-label mono">Author &amp; Affiliation</span>' +
+          '<div class="pub-author-name">' + escapeHtml(pub.author) + '</div>' +
+          '<div class="pub-author-role">' + escapeHtml(pub.authorRole) + '</div>' +
+          '<div class="pub-author-lab mono">' + escapeHtml(pub.authorAffiliation) + (pub.labAffiliation ? ' · ' + escapeHtml(pub.labAffiliation) : '') + '</div>' +
+        '</div>' +
+        '<div class="pub-author-meta">' +
+          '<div class="pub-author-meta-item"><span class="mono label">Series</span><span class="val">' + escapeHtml(pub.series) + '</span></div>' +
+          '<div class="pub-author-meta-item"><span class="mono label">Publication Date</span><span class="val">' + escapeHtml(pub.date) + '</span></div>' +
+          '<div class="pub-author-meta-item"><span class="mono label">Format</span><span class="val">' + escapeHtml(pub.format) + '</span></div>' +
+          '<div class="pub-author-meta-item"><span class="mono label">Review Status</span><span class="val">' + escapeHtml(pub.status) + '</span></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="pub-section">' +
+        '<h3 class="pub-section-head">Abstract</h3>' +
+        '<div class="pub-abstract-wrap">' + abstractHtml + '</div>' +
+      '</div>' +
+
+      (subjectsHtml ? 
+        '<div class="pub-section">' +
+          '<div class="pub-grid-2col">' +
+            '<div>' +
+              '<h3 class="pub-section-head">Subjects &amp; Categories</h3>' +
+              '<div class="pub-subjects">' + subjectsHtml + '</div>' +
+            '</div>' +
+            '<div>' +
+              '<h3 class="pub-section-head">Archive Provenance</h3>' +
+              '<p class="pub-provenance">Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.</p>' +
+            '</div>' +
+          '</div>' +
+        '</div>' : '') +
+
+      '<div class="pub-section">' +
+        '<h3 class="pub-section-head">Paper Access</h3>' +
+        '<div class="pub-download-card">' +
+          '<div class="pub-download-info">' +
+            '<h4>Receive Full Preprint</h4>' +
+            '<p>The paper will be delivered directly to your email inbox from <strong>frontierresearchlabb@gmail.com</strong>.</p>' +
+          '</div>' +
+          '<button type="button" class="btn download-btn" data-title="' + escapeHtml(pub.title) + '" data-file="' + escapeHtml(pub.file) + '">' +
+            '<span class="dot"></span>Download' +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderNotFoundHtml() {
+    return '<div class="pub-detail-wrap" style="padding: 32px 0;">' +
+      '<a href="/publications" class="pub-detail-back mono">← Back to Publications</a>' +
+      '<p class="sec-label mono" style="color: var(--blue);">Archive Notice</p>' +
+      '<h2 style="font-family: var(--display); font-size: clamp(28px, 3.5vw, 42px); margin: 12px 0 16px;">Publication Not Found</h2>' +
+      '<p class="lede" style="max-width: 52ch; margin-bottom: 32px;">The publication you requested does not exist or is currently being indexed. Please check our publications index for all available preprints.</p>' +
+      '<a href="/publications" class="btn"><span class="dot"></span>View All Publications</a>' +
+    '</div>';
+  }
+
+  // === ROUTER LOGIC ===
+  var routes = {
+    '/': ['hero', 'position', 'research', 'publications', 'problems', 'contact'],
+    '/research': ['research'],
+    '/publications': ['publications'],
+    '/problems': ['problems'],
+    '/contact': ['contact'],
+    '/terms': ['terms'],
+    '/privacy': ['privacy']
+  };
+
+  var metaTitles = {
+    '/': 'Frontier Research Lab',
+    '/research': 'Frontier Research Lab — Research',
+    '/publications': 'Frontier Research Lab — Publications',
+    '/problems': 'Frontier Research Lab — Open Problems',
+    '/contact': 'Frontier Research Lab — Contact',
+    '/terms': 'Frontier Research Lab — Terms of Service',
+    '/privacy': 'Frontier Research Lab — Privacy Policy'
+  };
+
+  function renderView(path) {
+    if (!path) path = '/';
+    // Normalize hash routing fallback if present
+    if (window.location.hash && window.location.hash.startsWith('#/')) {
+      path = window.location.hash.slice(1);
+    }
+    if (!path.startsWith('/')) path = '/' + path;
+    // Remove trailing slash if any
+    if (path !== '/' && path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+
+    var sections = document.querySelectorAll('main > .view-section');
+
+    // Check for dynamic publication detail route: /publications/<slug>
+    if (path.startsWith('/publications/') && path.length > 14) {
+      var slug = path.slice('/publications/'.length);
+      var pub = PUBLICATIONS_DATA.find(function(p) { return p.slug === slug; });
+      var detailContainer = document.getElementById('pubDetailContent');
+
+      sections.forEach(function(sec) {
+        if (sec.id === 'publication-detail') {
+          sec.classList.add('active');
+        } else {
+          sec.classList.remove('active');
+        }
+      });
+
+      if (pub) {
+        document.title = pub.title + ' — Frontier Research Lab';
+        if (detailContainer) detailContainer.innerHTML = renderPublicationDetailHtml(pub);
+      } else {
+        document.title = 'Publication Not Found — Frontier Research Lab';
+        if (detailContainer) detailContainer.innerHTML = renderNotFoundHtml();
+      }
+
+      window.scrollTo(0, 0);
+      return;
+    }
+    
+    var activeSections = routes[path] || routes['/'];
+    
+    sections.forEach(function(sec) {
+      if (activeSections.indexOf(sec.id) !== -1) {
+        sec.classList.add('active');
+      } else {
+        sec.classList.remove('active');
+      }
+    });
+    
+    // Update Document Title
+    document.title = metaTitles[path] || 'Frontier Research Lab';
+    
+    // Scroll to top when view changes
+    window.scrollTo(0, 0);
+  }
+
+  function navigate(path) {
+    window.history.pushState({}, '', path);
+    renderView(path);
+  }
+
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href || href.startsWith('mailto:') || href.startsWith('http:') || href.startsWith('https:') || link.hasAttribute('download')) {
+      return;
+    }
+    if (href.startsWith('/')) {
+      e.preventDefault();
+      navigate(href);
+    }
+  });
+
+  window.addEventListener('popstate', function() {
+    renderView(window.location.pathname);
+  });
+
+  // Initial render on load
+  renderView(window.location.pathname);
+
+  // === FORMSPREE LOGIC ===
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      var submitBtn = document.getElementById('submitBtn');
+      var btnText = document.getElementById('btnText');
+      var statusDiv = document.getElementById('formStatus');
+      
+      // Update reply-to field
+      var emailField = document.getElementById('email').value;
+      document.getElementById('_replyto').value = emailField;
+      
+      // Submitting state
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      submitBtn.style.cursor = 'not-allowed';
+      btnText.innerText = 'Submitting...';
+      statusDiv.style.display = 'none';
+
+      var formData = new FormData(contactForm);
+      var jsonObject = {};
+      formData.forEach(function(value, key){
+          // exclude hidden fields starting with _
+          if (!key.startsWith('_')) {
+              jsonObject[key] = value;
+          }
+      });
+      
+      var endpoint = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '') 
+          ? 'http://localhost:8000/api/contact' 
+          : '/api/contact';
+      
+      fetch(endpoint, {
+        method: 'POST',
+        body: JSON.stringify(jsonObject),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(function(response) {
+        if (response.ok) {
+          response.json().then(function(data) {
+            statusDiv.innerText = data.message || 'Thank you for your message. We will get back to you shortly.';
+            statusDiv.style.color = 'var(--ink)';
+            statusDiv.style.display = 'block';
+            contactForm.reset();
+          });
+        } else {
+          response.json().then(function(data) {
+            if (data && data.detail) {
+              if (Array.isArray(data.detail)) {
+                  statusDiv.innerText = 'Please ensure all fields are correctly filled.';
+              } else {
+                  statusDiv.innerText = data.detail;
+              }
+            } else {
+              statusDiv.innerText = 'Oops! There was a problem submitting your form.';
+            }
+            statusDiv.style.color = '#d32f2f'; // a readable error red
+            statusDiv.style.display = 'block';
+          });
+        }
+      }).catch(function(error) {
+        statusDiv.innerText = 'Oops! There was a problem submitting your form.';
+        statusDiv.style.color = '#d32f2f';
+        statusDiv.style.display = 'block';
+      }).finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+        btnText.innerText = 'Submit';
+      });
+    });
+  }
+
+  // === DOWNLOAD MODAL LOGIC ===
+  var downloadModal = document.getElementById('downloadModal');
+  var closeModalBtn = document.getElementById('closeModalBtn');
+  var downloadForm = document.getElementById('downloadForm');
+  var modalPaperTitle = document.getElementById('modalPaperTitle');
+  var modalPaperFile = document.getElementById('modalPaperFile');
+  var dlFormStatus = document.getElementById('dlFormStatus');
+  var dlSubmitBtn = document.getElementById('dlSubmitBtn');
+  var dlBtnText = document.getElementById('dlBtnText');
+
+  function openDownloadModal(title, file) {
+    if (modalPaperTitle) modalPaperTitle.innerText = title || '';
+    if (modalPaperFile) modalPaperFile.value = file || '';
+    if (dlFormStatus) dlFormStatus.style.display = 'none';
+    if (downloadForm) downloadForm.reset();
+    if (downloadModal) {
+      downloadModal.style.display = 'flex';
+    }
+  }
+
+  // Delegated click handler for all .download-btn elements across views
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.download-btn');
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
+      var title = btn.getAttribute('data-title');
+      var file = btn.getAttribute('data-file');
+      openDownloadModal(title, file);
+    }
+  });
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function() {
+      if (downloadModal) downloadModal.style.display = 'none';
+    });
+  }
+
+  if (downloadModal) {
+    window.addEventListener('click', function(e) {
+      if (e.target === downloadModal) {
+        downloadModal.style.display = 'none';
+      }
+    });
+  }
+
+  if (downloadForm) {
+    downloadForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var emailVal = document.getElementById('dlEmail').value;
+      var titleVal = modalPaperTitle.innerText;
+      var fileVal = modalPaperFile.value;
+
+      dlSubmitBtn.disabled = true;
+      dlSubmitBtn.style.opacity = '0.6';
+      dlBtnText.innerText = 'Sending Email...';
+      dlFormStatus.style.display = 'none';
+
+      var endpoint = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '') 
+          ? 'http://127.0.0.1:8000/api/download' 
+          : '/api/download';
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailVal,
+          paperTitle: titleVal,
+          paperFile: fileVal
+        })
+      }).then(function(res) {
+        return res.json().then(function(data) {
+          if (res.ok) {
+            dlFormStatus.innerText = data.message || 'Research paper sent to your email!';
+            dlFormStatus.style.color = 'var(--blue)';
+            dlFormStatus.style.display = 'block';
+            setTimeout(function() {
+              if (downloadModal) downloadModal.style.display = 'none';
+            }, 3000);
+          } else {
+            dlFormStatus.innerText = data.detail || 'Error sending email. Please try again.';
+            dlFormStatus.style.color = '#d32f2f';
+            dlFormStatus.style.display = 'block';
+          }
+        });
+      }).catch(function() {
+        dlFormStatus.innerText = 'Error connecting to server. Please try again.';
+        dlFormStatus.style.color = '#d32f2f';
+        dlFormStatus.style.display = 'block';
+      }).finally(function() {
+        dlSubmitBtn.disabled = false;
+        dlSubmitBtn.style.opacity = '1';
+        dlBtnText.innerText = 'Send Paper to Email';
+      });
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
