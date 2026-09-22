@@ -81,6 +81,7 @@
     font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
     background:var(--ink);color:var(--paper);padding:13px 20px;border-radius:2px;
     transition:background .2s ease,transform .2s ease;
+    border:none;cursor:pointer;
   }
   .btn:hover{background:var(--blue);transform:translateY(-1px)}
   .btn .dot{width:6px;height:6px;border-radius:50%;background:var(--lime)}
@@ -166,6 +167,16 @@
   }
   .pub-detail-meta .type{color:var(--blue);font-size:11.5px}
   .pub-detail-meta .status{color:var(--ink-40);font-size:11.5px}
+  .pub-detail-header-row{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:24px 32px;margin:0 0 16px;
+  }
+  .pub-detail-header-row .pub-detail-title{
+    margin:0;flex:1 1 auto;min-width:0;
+  }
+  .pub-detail-header-row .download-btn{
+    flex-shrink:0;margin-top:6px;white-space:nowrap;
+  }
   .pub-detail-title{
     font-family:var(--display);font-weight:700;
     font-size:clamp(28px,3.2vw,44px);line-height:1.16;
@@ -291,15 +302,321 @@
     .pub-author-card{grid-template-columns:1fr;gap:24px}
     .pub-author-meta{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:20px}
     .pub-grid-2col{grid-template-columns:1fr;gap:28px}
+    .admin-paper-card{grid-template-columns:1fr;gap:18px}
+    .admin-form-grid-2{grid-template-columns:1fr}
   }
   @media (max-width:700px){
     .brand img{width:132px}
     nav ul{gap:18px}
     nav li:nth-child(1),nav li:nth-child(3){display:none}
+    .pub-detail-header-row{flex-direction:column;align-items:flex-start;gap:16px}
     .pub-detail-meta{flex-direction:column;align-items:flex-start;gap:8px}
     .pub-author-meta{grid-template-columns:1fr;gap:12px}
     .pub-download-card{flex-direction:column;align-items:flex-start}
+    .admin-dash-header{flex-direction:column;align-items:flex-start}
   }
+
+  /* admin styles */
+  .admin-stealth-trigger {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: default;
+    z-index: 50;
+    text-decoration: none;
+    outline: none;
+  }
+  #admin-section .wrap {
+    max-width: min(92vw, 1440px);
+    padding-inline: clamp(20px, 4vw, 56px);
+  }
+  .admin-login-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    padding: clamp(32px, 4vw, 48px);
+    max-width: 480px;
+    margin: clamp(40px, 6vw, 80px) auto;
+  }
+  .admin-login-card h2 {
+    font-family: var(--display);
+    font-size: clamp(24px, 2.5vw, 30px);
+    font-weight: 700;
+    margin: 0 0 10px;
+    letter-spacing: -.01em;
+  }
+  .admin-login-card p {
+    color: var(--ink-60);
+    font-size: 14.5px;
+    margin: 0 0 28px;
+    line-height: 1.55;
+  }
+  .admin-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .admin-dash-title h2 {
+    font-family: var(--display);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    margin: 0 0 6px;
+  }
+  .admin-dash-title p {
+    color: var(--ink-60);
+    font-size: 15px;
+    margin: 0;
+  }
+  .admin-dash-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 10px 18px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+  .btn-danger {
+    border-color: rgba(211, 47, 47, 0.4);
+    color: #d32f2f;
+  }
+  .btn-danger:hover {
+    background: rgba(211, 47, 47, 0.08);
+    border-color: #d32f2f;
+    color: #b71c1c;
+  }
+  .admin-papers-container {
+    display: grid;
+    gap: 16px;
+  }
+  .admin-paper-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    padding: clamp(20px, 2.2vw, 28px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    transition: border-color .2s ease;
+  }
+  .admin-paper-card:hover {
+    border-color: rgba(13,17,21,.3);
+  }
+  .admin-paper-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .admin-paper-meta-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    font-size: 11px;
+    color: var(--ink-40);
+  }
+  .admin-paper-meta-top .type { color: var(--blue); }
+  .admin-paper-card h3 {
+    font-family: var(--display);
+    font-size: clamp(18px, 1.4vw, 21px);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.35;
+  }
+  .admin-paper-card h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+  .admin-paper-card h3 a:hover { color: var(--blue); }
+  .admin-paper-author {
+    color: var(--ink-60);
+    font-size: 14.5px;
+    margin: 0;
+    line-height: 1.45;
+  }
+  .admin-paper-file {
+    font-size: 11.5px;
+    color: var(--ink-40);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    word-break: break-all;
+  }
+  .admin-paper-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .admin-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 17, 21, 0.75);
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1000;
+    padding: 36px 16px 60px 16px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .admin-modal-dialog {
+    background: #ffffff;
+    border: 1px solid var(--rule);
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .admin-modal-dialog form,
+  form.admin-modal-dialog {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .admin-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--rule);
+    background: #ffffff;
+    border-radius: 6px 6px 0 0;
+  }
+  .admin-modal-head h3 {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .admin-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--ink-40);
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 2px;
+    transition: color .15s ease, background-color .15s ease;
+  }
+  .admin-modal-close:hover {
+    color: var(--ink);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .admin-modal-body {
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #ffffff;
+    box-sizing: border-box;
+  }
+  .admin-form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .admin-field label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-60);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .admin-field input, .admin-field select, .admin-field textarea {
+    padding: 11px 14px;
+    border: 1px solid var(--rule);
+    background: #fbfbfb;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--ink);
+    border-radius: 3px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .admin-field input:focus, .admin-field select:focus, .admin-field textarea:focus {
+    border-color: var(--blue);
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(26, 86, 219, 0.12);
+  }
+  .admin-field textarea {
+    min-height: 100px;
+    line-height: 1.55;
+    resize: vertical;
+  }
+  .admin-field input[type="file"] {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .admin-modal-foot {
+    padding: 18px 28px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    border-radius: 0 0 6px 6px;
+  }
+  @media (max-width: 680px) {
+    .admin-form-grid-2 {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .admin-modal-head,
+    .admin-modal-body,
+    .admin-modal-foot {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
   }
@@ -399,7 +716,15 @@
           <p class="lede" style="margin-bottom:0">Preprints are reviewed internally and by outside researchers before they are archived. Status is stated plainly on every entry.</p>
         </div>
       </div>
-      <div class="pubs">
+      <div class="pubs" id="publicationsList">
+        <div class="pub">
+          <span class="meta mono">Preprint</span>
+          <span>
+            <h3><a href="/publications/closing-the-handoff-gap-attenuated-agent-delegation" class="pub-link">Closing the Handoff Gap: Attenuated Agent Delegation</a></h3>
+            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Closing the Handoff Gap: Attenuated Agent Delegation" data-file="research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf"><span class="dot"></span>Download</button></div>
+          </span>
+          <span class="status mono">In review</span>
+        </div>
         <div class="pub">
           <span class="meta mono">Research Paper</span>
           <span>
@@ -421,14 +746,6 @@
           <span>
             <h3><a href="/publications/agent-to-agent-handoff-problem" class="pub-link">Agent to Agent Handoff Problem</a></h3>
             <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Agent to Agent Handoff Problem" data-file="research paper/Agent to Agent Handoff Problem.pdf"><span class="dot"></span>Download</button></div>
-          </span>
-          <span class="status mono">In review</span>
-        </div>
-        <div class="pub">
-          <span class="meta mono">Preprint</span>
-          <span>
-            <h3><a href="/publications/closing-the-handoff-gap-attenuated-agent-delegation" class="pub-link">Closing the Handoff Gap: Attenuated Agent Delegation</a></h3>
-            <div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="Closing the Handoff Gap: Attenuated Agent Delegation" data-file="research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf"><span class="dot"></span>Download</button></div>
           </span>
           <span class="status mono">In review</span>
         </div>
@@ -472,6 +789,62 @@
     <div class="wrap sec">
       <div id="pubDetailContent">
         <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section id="admin-section" class="view-section">
+    <div class="wrap sec">
+      <!-- Admin Login View -->
+      <div id="adminLoginContainer" style="display:none;">
+        <div class="admin-login-card">
+          <p class="sec-label mono" style="color:var(--blue); margin-bottom:8px;">Administrative Control</p>
+          <h2>Research Paper Portal</h2>
+          <p>Authenticate with laboratory administrative credentials to publish, edit, or remove preprints.</p>
+          <form id="adminLoginForm">
+            <div class="admin-field" style="margin-bottom:18px;">
+              <label for="adminUsername">Username</label>
+              <input type="text" id="adminUsername" required autocomplete="username" placeholder="Username">
+            </div>
+            <div class="admin-field" style="margin-bottom:24px;">
+              <label for="adminPassword">Password</label>
+              <input type="password" id="adminPassword" required autocomplete="current-password" placeholder="Password">
+            </div>
+            <div id="adminLoginStatus" style="display:none; font-size:13.5px; margin-bottom:18px;"></div>
+            <button type="submit" id="adminLoginBtn" class="btn" style="width:100%;">
+              <span class="dot"></span><span id="adminLoginBtnText">Sign In to Dashboard</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Admin Dashboard View -->
+      <div id="adminDashboardContainer" style="display:none;">
+        <div class="admin-dash-header">
+          <div class="admin-dash-title">
+            <p class="sec-label mono" style="color:var(--blue); margin-bottom:6px;">Console</p>
+            <h2>RESEARCH PAPER MANAGEMENT</h2>
+            <p>Publishing, revision, and distribution control for the Frontier Research Series</p>
+          </div>
+          <div class="admin-dash-actions">
+            <button type="button" id="adminNewPaperBtn" class="btn">
+              <span class="dot"></span>+ Upload New Research Paper
+            </button>
+            <button type="button" id="adminLogoutBtn" class="btn-outline">
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+          <h3 style="font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-40); margin:0;">
+            Existing Research Papers (<span id="adminPaperCount">0</span>)
+          </h3>
+        </div>
+
+        <div id="adminPapersList" class="admin-papers-container">
+          <!-- Rendered dynamically -->
+        </div>
       </div>
     </div>
   </section>
@@ -730,6 +1103,145 @@
     </div>
   </div>
 
+  <!-- Admin Paper Upload / Edit Modal -->
+  <div id="adminPaperModal" class="admin-modal-overlay">
+    <form id="adminPaperForm" class="admin-modal-dialog">
+      <div class="admin-modal-head">
+        <h3 id="adminModalTitle">Upload New Research Paper</h3>
+        <button type="button" class="admin-modal-close" id="adminModalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="admin-modal-body">
+        <input type="hidden" id="paperEditingSlug" value="">
+
+        <div class="admin-field">
+          <label for="paperTitle">Paper Title *</label>
+          <input type="text" id="paperTitle" required placeholder="e.g. A Field Guide to Agent Harness Engineering">
+        </div>
+
+        <div class="admin-field">
+          <label for="paperSubtitle">Subtitle / Description</label>
+          <input type="text" id="paperSubtitle" placeholder="e.g. Governing Observation, Action, Memory, Recovery, and Verification...">
+        </div>
+
+        <div class="admin-form-grid-2">
+          <div class="admin-field">
+            <label for="paperAuthor">Author Name *</label>
+            <input type="text" id="paperAuthor" required value="Dr. Binod Kumar">
+          </div>
+          <div class="admin-field">
+            <label for="paperAuthorRole">Author Role / Title</label>
+            <input type="text" id="paperAuthorRole" value="Founder &amp; Chief AI Officer, AgentsArchitects.ai · AI Research Mentor">
+          </div>
+        </div>
+
+        <div class="admin-form-grid-2">
+          <div class="admin-field">
+            <label for="paperAuthorAffiliation">Institutional Affiliation</label>
+            <input type="text" id="paperAuthorAffiliation" value="Indian Institute of Technology Bombay &amp; Banaras Hindu University">
+          </div>
+          <div class="admin-field">
+            <label for="paperLabAffiliation">Lab Affiliation / Badge</label>
+            <input type="text" id="paperLabAffiliation" value="Frontier Research Series">
+          </div>
+        </div>
+
+        <div class="admin-form-grid-2">
+          <div class="admin-field">
+            <label for="paperType">Publication Type</label>
+            <select id="paperType">
+              <option value="Research Paper">Research Paper</option>
+              <option value="Working Paper">Working Paper</option>
+              <option value="Preprint">Preprint</option>
+              <option value="Technical Preprint">Technical Preprint</option>
+            </select>
+          </div>
+          <div class="admin-field">
+            <label for="paperStatus">Publication Status</label>
+            <select id="paperStatus">
+              <option value="In review">In review</option>
+              <option value="Published">Published</option>
+              <option value="Archived">Archived</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="admin-form-grid-2">
+          <div class="admin-field">
+            <label for="paperSeries">Series Name</label>
+            <input type="text" id="paperSeries" value="Frontier Research Series">
+          </div>
+          <div class="admin-field">
+            <label for="paperDate">Publication Date</label>
+            <input type="text" id="paperDate" placeholder="e.g. October 2026">
+          </div>
+        </div>
+
+        <div class="admin-form-grid-2">
+          <div class="admin-field">
+            <label for="paperFormat">Format / Length</label>
+            <input type="text" id="paperFormat" value="PDF / Research Paper">
+          </div>
+          <div class="admin-field">
+            <label for="paperSubjects">Subjects &amp; Categories (comma-separated)</label>
+            <input type="text" id="paperSubjects" placeholder="e.g. Agent Harness Architecture, AI Safety, cs.CR">
+          </div>
+        </div>
+
+        <div class="admin-field">
+          <label for="paperProvenance">Archive Provenance</label>
+          <textarea id="paperProvenance" style="min-height:70px;">Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.</textarea>
+        </div>
+
+        <div class="admin-field">
+          <label for="paperAbstract">Abstract (Separate paragraphs with double Enter / blank line) *</label>
+          <textarea id="paperAbstract" required placeholder="Enter the complete authentic abstract..."></textarea>
+        </div>
+
+        <div class="admin-field">
+          <label for="paperPdfFile">Research Paper PDF File *</label>
+          <input type="file" id="paperPdfFile" accept=".pdf,application/pdf">
+          <span id="paperPdfNotice" class="mono" style="font-size:11.5px; color:var(--ink-40); margin-top:2px;">Only PDF files accepted (max 50MB).</span>
+        </div>
+
+        <div id="adminFormStatus" style="display:none; font-size:13.5px; padding:10px 14px; border-radius:2px;"></div>
+      </div>
+
+      <div class="admin-modal-foot">
+        <button type="button" class="btn-outline" id="adminModalCancelBtn">Cancel</button>
+        <button type="submit" class="btn" id="adminModalSubmitBtn">
+          <span class="dot"></span><span id="adminModalSubmitText">Publish Paper</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Admin Delete Confirmation Modal -->
+  <div id="adminDeleteModal" class="admin-modal-overlay">
+    <div class="admin-modal-dialog" style="max-width:520px;">
+      <div class="admin-modal-head">
+        <h3 style="color:#d32f2f;">Confirm Deletion</h3>
+        <button type="button" class="admin-modal-close" id="adminDeleteModalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="admin-modal-body" style="gap:14px;">
+        <p style="margin:0; color:var(--ink); font-size:15px; line-height:1.5;">
+          Are you sure you want to delete this publication? This will remove the paper from the public index and dynamic detail view.
+        </p>
+        <div style="background:var(--paper); border:1px solid var(--rule); padding:14px 16px; border-radius:2px;">
+          <span class="mono" style="font-size:10.5px; color:var(--ink-40); display:block; margin-bottom:4px; letter-spacing:.1em; text-transform:uppercase;">Publication to Delete</span>
+          <h4 id="adminDeleteTargetTitle" style="font-family:var(--display); font-size:16px; font-weight:700; margin:0; line-height:1.4; color:var(--ink);"></h4>
+        </div>
+        <input type="hidden" id="adminDeleteTargetSlug" value="">
+        <div id="adminDeleteStatus" style="display:none; font-size:13.5px;"></div>
+      </div>
+      <div class="admin-modal-foot">
+        <button type="button" class="btn-outline" id="adminDeleteCancelBtn">Cancel</button>
+        <button type="button" class="btn-outline btn-danger" id="adminDeleteConfirmBtn">
+          Delete Publication
+        </button>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <footer>
@@ -756,9 +1268,10 @@
       </ul>
     </div>
   </div>
-  <div class="wrap foot-bottom mono">
+  <div class="wrap foot-bottom mono" style="position:relative;">
     <span>© 2026 Frontier Research Lab</span>
     <span>Preprints carry a status line until an archive identifier resolves</span>
+    <a href="/admin" id="adminTrigger" class="admin-stealth-trigger" aria-label="Administrative access" tabindex="-1"></a>
   </div>
 </footer>
 
@@ -821,6 +1334,27 @@
   // === PUBLICATION DATA ===
   var PUBLICATIONS_DATA = [
     {
+      slug: 'closing-the-handoff-gap-attenuated-agent-delegation',
+      title: 'Closing the Handoff Gap: Attenuated Agent Delegation',
+      subtitle: 'A Reference Architecture for Attenuated Agent Delegation: Verifiable, Monotonic, Cross-Domain Delegation for Multi-Agent Systems',
+      type: 'Preprint',
+      status: 'In review',
+      author: 'Binod Kumar',
+      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai',
+      authorAffiliation: 'Produced for and with Frontier Research Lab',
+      labAffiliation: 'Frontier Research Lab · cs.CR',
+      date: 'August 2026',
+      series: 'Frontier Research Series Preprints',
+      format: 'PDF (13 pages)',
+      subjects: ['cs.CR (Cryptography and Security)', 'Attenuated Delegation Credential', 'Monotonic Capabilities', 'Multi-Agent Security', 'SPIFFE/SPIRE'],
+      abstract: [
+        'The agent-to-agent handoff, the moment one AI agent passes work to another, is the seam along which multi-agent systems most often fail. As a companion analysis argues, three structural breakages compound at each hop: identity collapse, where the agent\'s identity replaces the human\'s; non-attenuation, where privilege never narrows as it is forwarded; and loss of the anchor, where no deployed protocol can prove which human authorized which action three or four hops down a recursive, cross-domain delegation chain. The result is a confused deputy at machine speed.',
+        'This paper moves from diagnosis to construction. We present the Attenuated Delegation Credential (adc), a public-key, caveat-based capability whose scope can only ever narrow as it is delegated, and whose chain of signed blocks makes the originating human and every intermediary agent cryptographically verifiable at any depth, across trust domains, without pre-arranged federation. Around it we specify a reference architecture: workload-attested agent identities, an identity-aware enforcement gateway at every boundary, just-in-time attenuated minting, per-action runtime authorization, a tamper-evident transparency log, and depth-bounded delegation with human checkpoints for high-impact actions.',
+        'We give a formal model and prove five properties: monotone attenuation, intersection-ceiling safety (which reduces the confused-deputy condition to a policy violation the gateway rejects), attribution soundness under existential unforgeability, bounded delegation depth, and contagion containment. We describe a prototype composed from SPIFFE/SPIRE, biscuit-style tokens, Open Policy Agent, and a Merkle transparency log, and give an analytical cost model with illustrative, to-be-validated overhead figures. The architecture satisfies all seven session-trust requirements simultaneously and provably blocks four attack classes, namely injection-driven confused deputy, authority re-delegation contagion, cross-organization token pivots, and identity collapse, that the current composition of OAuth, SPIFFE, or macaroons alone does not.'
+      ],
+      file: 'research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf'
+    },
+    {
       slug: 'a-field-guide-to-agent-harness-engineering',
       title: 'A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents',
       subtitle: 'The Architecture Behind Reliable AI Agents: Governing Observation, Action, Memory, Recovery, and Verification in Autonomous Systems',
@@ -882,27 +1416,6 @@
         'For a Chief AI Officer the takeaway is uncomfortable but simple: if your threat model still treats an AI agent as a passive query tool, your multi-agent rollout is already moving faster than your identity controls. For a researcher, proving which human authorized which action across a recursive delegation chain remains unsolved, and it is a problem where real progress can be made.'
       ],
       file: 'research paper/Agent to Agent Handoff Problem.pdf'
-    },
-    {
-      slug: 'closing-the-handoff-gap-attenuated-agent-delegation',
-      title: 'Closing the Handoff Gap: Attenuated Agent Delegation',
-      subtitle: 'A Reference Architecture for Attenuated Agent Delegation: Verifiable, Monotonic, Cross-Domain Delegation for Multi-Agent Systems',
-      type: 'Preprint',
-      status: 'In review',
-      author: 'Binod Kumar',
-      authorRole: 'Founder & Chief AI Officer, AgentsArchitects.ai',
-      authorAffiliation: 'Produced for and with Frontier Research Lab',
-      labAffiliation: 'Frontier Research Lab · cs.CR',
-      date: 'August 2026',
-      series: 'Frontier Research Series Preprints',
-      format: 'PDF (13 pages)',
-      subjects: ['cs.CR (Cryptography and Security)', 'Attenuated Delegation Credential', 'Monotonic Capabilities', 'Multi-Agent Security', 'SPIFFE/SPIRE'],
-      abstract: [
-        'The agent-to-agent handoff, the moment one AI agent passes work to another, is the seam along which multi-agent systems most often fail. As a companion analysis argues, three structural breakages compound at each hop: identity collapse, where the agent\'s identity replaces the human\'s; non-attenuation, where privilege never narrows as it is forwarded; and loss of the anchor, where no deployed protocol can prove which human authorized which action three or four hops down a recursive, cross-domain delegation chain. The result is a confused deputy at machine speed.',
-        'This paper moves from diagnosis to construction. We present the Attenuated Delegation Credential (adc), a public-key, caveat-based capability whose scope can only ever narrow as it is delegated, and whose chain of signed blocks makes the originating human and every intermediary agent cryptographically verifiable at any depth, across trust domains, without pre-arranged federation. Around it we specify a reference architecture: workload-attested agent identities, an identity-aware enforcement gateway at every boundary, just-in-time attenuated minting, per-action runtime authorization, a tamper-evident transparency log, and depth-bounded delegation with human checkpoints for high-impact actions.',
-        'We give a formal model and prove five properties: monotone attenuation, intersection-ceiling safety (which reduces the confused-deputy condition to a policy violation the gateway rejects), attribution soundness under existential unforgeability, bounded delegation depth, and contagion containment. We describe a prototype composed from SPIFFE/SPIRE, biscuit-style tokens, Open Policy Agent, and a Merkle transparency log, and give an analytical cost model with illustrative, to-be-validated overhead figures. The architecture satisfies all seven session-trust requirements simultaneously and provably blocks four attack classes, namely injection-driven confused deputy, authority re-delegation contagion, cross-organization token pivots, and identity collapse, that the current composition of OAuth, SPIFFE, or macaroons alone does not.'
-      ],
-      file: 'research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf'
     },
     {
       slug: 'authorization-for-self-improving-agents',
@@ -1016,7 +1529,12 @@
         '<span class="type">' + escapeHtml(pub.type) + '</span>' +
         '<span class="status">' + escapeHtml(pub.status) + '</span>' +
       '</div>' +
-      '<h1 class="pub-detail-title">' + escapeHtml(pub.title) + '</h1>' +
+      '<div class="pub-detail-header-row">' +
+        '<h1 class="pub-detail-title">' + escapeHtml(pub.title) + '</h1>' +
+        '<button type="button" class="btn download-btn" data-title="' + escapeHtml(pub.title) + '" data-file="' + escapeHtml(pub.file) + '">' +
+          '<span class="dot"></span>Download' +
+        '</button>' +
+      '</div>' +
       (pub.subtitle ? '<p class="pub-detail-subtitle">' + escapeHtml(pub.subtitle) + '</p>' : '') +
       
       '<div class="pub-author-card">' +
@@ -1060,9 +1578,6 @@
             '<h4>Receive Full Preprint</h4>' +
             '<p>The paper will be delivered directly to your email inbox from <strong>frontierresearchlabb@gmail.com</strong>.</p>' +
           '</div>' +
-          '<button type="button" class="btn download-btn" data-title="' + escapeHtml(pub.title) + '" data-file="' + escapeHtml(pub.file) + '">' +
-            '<span class="dot"></span>Download' +
-          '</button>' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -1086,7 +1601,8 @@
     '/problems': ['problems'],
     '/contact': ['contact'],
     '/terms': ['terms'],
-    '/privacy': ['privacy']
+    '/privacy': ['privacy'],
+    '/admin': ['admin-section']
   };
 
   var metaTitles = {
@@ -1096,7 +1612,8 @@
     '/problems': 'Frontier Research Lab — Open Problems',
     '/contact': 'Frontier Research Lab — Contact',
     '/terms': 'Frontier Research Lab — Terms of Service',
-    '/privacy': 'Frontier Research Lab — Privacy Policy'
+    '/privacy': 'Frontier Research Lab — Privacy Policy',
+    '/admin': 'Frontier Research Lab — Research Paper Management'
   };
 
   function renderView(path) {
@@ -1148,6 +1665,10 @@
         sec.classList.remove('active');
       }
     });
+
+    if (path === '/admin') {
+      initAdminView();
+    }
     
     // Update Document Title
     document.title = metaTitles[path] || 'Frontier Research Lab';
@@ -1354,6 +1875,537 @@
       });
     });
   }
+
+  // === DYNAMIC PUBLICATIONS SYNC & RENDERING ===
+  function getApiBaseUrl() {
+    var isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '');
+    return isLocal ? 'http://127.0.0.1:8000' : '';
+  }
+
+  function renderPublicationsList(pubs) {
+    var container = document.getElementById('publicationsList');
+    if (!container) return;
+    container.innerHTML = pubs.map(function(pub) {
+      return '<div class="pub">' +
+        '<span class="meta mono">' + escapeHtml(pub.type || 'Research Paper') + '</span>' +
+        '<span>' +
+          '<h3><a href="/publications/' + escapeHtml(pub.slug) + '" class="pub-link">' + escapeHtml(pub.title) + '</a></h3>' +
+          '<div style="margin-top:14px;"><button type="button" class="btn download-btn" data-title="' + escapeHtml(pub.title) + '" data-file="' + escapeHtml(pub.file || '') + '"><span class="dot"></span>Download</button></div>' +
+        '</span>' +
+        '<span class="status mono">' + escapeHtml(pub.status || 'In review') + '</span>' +
+      '</div>';
+    }).join('');
+  }
+
+  function fetchPublications(callback) {
+    fetch(getApiBaseUrl() + '/api/publications')
+      .then(function(res) {
+        if (!res.ok) throw new Error('API request failed');
+        return res.json();
+      })
+      .then(function(data) {
+        if (Array.isArray(data) && data.length > 0) {
+          PUBLICATIONS_DATA = data;
+          renderPublicationsList(PUBLICATIONS_DATA);
+          // If on a detail page, re-render detail view with updated data
+          if (window.location.pathname.startsWith('/publications/')) {
+            var currentSlug = window.location.pathname.slice('/publications/'.length);
+            var pub = PUBLICATIONS_DATA.find(function(p) { return p.slug === currentSlug; });
+            var detailContainer = document.getElementById('pubDetailContent');
+            if (pub && detailContainer) {
+              detailContainer.innerHTML = renderPublicationDetailHtml(pub);
+            }
+          }
+        }
+        if (typeof callback === 'function') callback(null, PUBLICATIONS_DATA);
+      })
+      .catch(function(err) {
+        console.warn('Could not fetch latest publications from API, using fallback data:', err);
+        if (typeof callback === 'function') callback(err, PUBLICATIONS_DATA);
+      });
+  }
+
+  // Fetch publications immediately on load
+  fetchPublications();
+
+  // === ADMIN AUTHENTICATION & DASHBOARD LOGIC ===
+  var ADMIN_TOKEN_KEY = 'frl_admin_session_token';
+
+  function getAdminToken() {
+    return sessionStorage.getItem(ADMIN_TOKEN_KEY);
+  }
+
+  function setAdminToken(token) {
+    if (token) {
+      sessionStorage.setItem(ADMIN_TOKEN_KEY, token);
+    } else {
+      sessionStorage.removeItem(ADMIN_TOKEN_KEY);
+    }
+  }
+
+  function initAdminView() {
+    var token = getAdminToken();
+    var loginBox = document.getElementById('adminLoginContainer');
+    var dashBox = document.getElementById('adminDashboardContainer');
+    if (!token) {
+      if (loginBox) loginBox.style.display = 'block';
+      if (dashBox) dashBox.style.display = 'none';
+      return;
+    }
+
+    // Verify token with backend
+    fetch(getApiBaseUrl() + '/api/admin/check-auth', {
+      headers: { 'Authorization': 'Bearer ' + token }
+    }).then(function(res) {
+      if (res.ok) {
+        if (loginBox) loginBox.style.display = 'none';
+        if (dashBox) dashBox.style.display = 'block';
+        loadAdminDashboard();
+      } else {
+        setAdminToken(null);
+        if (loginBox) loginBox.style.display = 'block';
+        if (dashBox) dashBox.style.display = 'none';
+      }
+    }).catch(function() {
+      if (loginBox) loginBox.style.display = 'block';
+      if (dashBox) dashBox.style.display = 'none';
+    });
+  }
+
+  function loadAdminDashboard() {
+    var token = getAdminToken();
+    if (!token) return;
+    fetch(getApiBaseUrl() + '/api/admin/publications', {
+      headers: { 'Authorization': 'Bearer ' + token }
+    }).then(function(res) {
+      if (!res.ok) throw new Error('Failed to load admin publications');
+      return res.json();
+    }).then(function(pubs) {
+      PUBLICATIONS_DATA = pubs;
+      renderAdminPapersList(pubs);
+      renderPublicationsList(pubs);
+    }).catch(function(err) {
+      console.error(err);
+    });
+  }
+
+  function renderAdminPapersList(pubs) {
+    var container = document.getElementById('adminPapersList');
+    var countEl = document.getElementById('adminPaperCount');
+    if (countEl) countEl.innerText = pubs.length;
+    if (!container) return;
+
+    if (pubs.length === 0) {
+      container.innerHTML = '<div style="padding: 40px; text-align: center; color: var(--ink-60); background: var(--paper-2); border: 1px solid var(--rule);">' +
+        '<p style="margin: 0; font-size: 15px;">No research papers currently indexed. Click "+ Upload New Research Paper" to publish your first paper.</p>' +
+      '</div>';
+      return;
+    }
+
+    container.innerHTML = pubs.map(function(pub) {
+      var fileName = pub.file ? pub.file.split('/').pop() : 'No PDF attached';
+      return '<div class="admin-paper-card">' +
+        '<div class="admin-paper-info">' +
+          '<div class="admin-paper-meta-top mono">' +
+            '<span class="type">' + escapeHtml(pub.type || 'Research Paper') + '</span>' +
+            '<span>•</span>' +
+            '<span>' + escapeHtml(pub.status || 'In review') + '</span>' +
+            '<span>•</span>' +
+            '<span>' + escapeHtml(pub.date || '') + '</span>' +
+          '</div>' +
+          '<h3><a href="/publications/' + escapeHtml(pub.slug) + '" target="_blank" title="View publication detail">' + escapeHtml(pub.title) + ' ↗</a></h3>' +
+          '<p class="admin-paper-author">' + escapeHtml(pub.author || '') + (pub.authorAffiliation ? ' · <span style="color:var(--ink-40); font-size:13.5px;">' + escapeHtml(pub.authorAffiliation) + '</span>' : '') + '</p>' +
+          '<div class="admin-paper-file mono">' +
+            '<svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1h6.5L11 4.5V13H1V1z"/></svg>' +
+            '<span>' + escapeHtml(fileName) + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="admin-paper-actions">' +
+          '<button type="button" class="btn-outline btn-edit-pub" data-slug="' + escapeHtml(pub.slug) + '">Edit</button>' +
+          '<button type="button" class="btn-outline btn-danger btn-delete-pub" data-slug="' + escapeHtml(pub.slug) + '" data-title="' + escapeHtml(pub.title) + '">Delete</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // Admin Login Handler
+  var adminLoginForm = document.getElementById('adminLoginForm');
+  if (adminLoginForm) {
+    adminLoginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var usernameVal = document.getElementById('adminUsername').value.trim();
+      var passwordVal = document.getElementById('adminPassword').value;
+      var statusDiv = document.getElementById('adminLoginStatus');
+      var loginBtn = document.getElementById('adminLoginBtn');
+      var btnText = document.getElementById('adminLoginBtnText');
+
+      loginBtn.disabled = true;
+      loginBtn.style.opacity = '0.6';
+      if (btnText) btnText.innerText = 'Authenticating...';
+      if (statusDiv) statusDiv.style.display = 'none';
+
+      fetch(getApiBaseUrl() + '/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: usernameVal, password: passwordVal })
+      }).then(function(res) {
+        return res.json().then(function(data) {
+          if (res.ok && data.token) {
+            setAdminToken(data.token);
+            adminLoginForm.reset();
+            initAdminView();
+          } else {
+            if (statusDiv) {
+              statusDiv.innerText = data.detail || 'Invalid username or password.';
+              statusDiv.style.color = '#d32f2f';
+              statusDiv.style.display = 'block';
+            }
+          }
+        });
+      }).catch(function(err) {
+        if (statusDiv) {
+          statusDiv.innerText = 'Error connecting to server. Please try again.';
+          statusDiv.style.color = '#d32f2f';
+          statusDiv.style.display = 'block';
+        }
+      }).finally(function() {
+        loginBtn.disabled = false;
+        loginBtn.style.opacity = '1';
+        if (btnText) btnText.innerText = 'Sign In to Dashboard';
+      });
+    });
+  }
+
+  // Admin Logout Handler
+  var adminLogoutBtn = document.getElementById('adminLogoutBtn');
+  if (adminLogoutBtn) {
+    adminLogoutBtn.addEventListener('click', function() {
+      var token = getAdminToken();
+      if (token) {
+        fetch(getApiBaseUrl() + '/api/admin/logout', {
+          method: 'POST',
+          headers: { 'Authorization': 'Bearer ' + token }
+        }).catch(function(){});
+      }
+      setAdminToken(null);
+      initAdminView();
+    });
+  }
+
+  // Paper Modal logic (Upload / Edit)
+  var adminPaperModal = document.getElementById('adminPaperModal');
+  var adminModalTitle = document.getElementById('adminModalTitle');
+  var adminModalCloseBtn = document.getElementById('adminModalCloseBtn');
+  var adminModalCancelBtn = document.getElementById('adminModalCancelBtn');
+  var adminPaperForm = document.getElementById('adminPaperForm');
+  var adminNewPaperBtn = document.getElementById('adminNewPaperBtn');
+  var adminModalSubmitText = document.getElementById('adminModalSubmitText');
+  var adminModalSubmitBtn = document.getElementById('adminModalSubmitBtn');
+  var adminFormStatus = document.getElementById('adminFormStatus');
+
+  function openPaperModal(pubToEdit) {
+    if (!adminPaperModal) return;
+    if (adminFormStatus) adminFormStatus.style.display = 'none';
+    adminPaperModal.scrollTop = 0;
+
+    if (pubToEdit) {
+      // Edit Mode
+      if (adminModalTitle) adminModalTitle.innerText = 'Edit Research Paper';
+      if (adminModalSubmitText) adminModalSubmitText.innerText = 'Update Paper';
+      document.getElementById('paperEditingSlug').value = pubToEdit.slug || '';
+      document.getElementById('paperTitle').value = pubToEdit.title || '';
+      document.getElementById('paperSubtitle').value = pubToEdit.subtitle || '';
+      document.getElementById('paperAuthor').value = pubToEdit.author || '';
+      document.getElementById('paperAuthorRole').value = pubToEdit.authorRole || '';
+      document.getElementById('paperAuthorAffiliation').value = pubToEdit.authorAffiliation || '';
+      document.getElementById('paperLabAffiliation').value = pubToEdit.labAffiliation || '';
+      document.getElementById('paperType').value = pubToEdit.type || 'Research Paper';
+      document.getElementById('paperStatus').value = pubToEdit.status || 'In review';
+      document.getElementById('paperSeries').value = pubToEdit.series || 'Frontier Research Series';
+      document.getElementById('paperDate').value = pubToEdit.date || '';
+      document.getElementById('paperFormat').value = pubToEdit.format || 'PDF / Research Paper';
+      document.getElementById('paperSubjects').value = (pubToEdit.subjects || []).join(', ');
+      document.getElementById('paperProvenance').value = pubToEdit.provenance || '';
+      
+      var absText = Array.isArray(pubToEdit.abstract) ? pubToEdit.abstract.join('\n\n') : (pubToEdit.abstract || '');
+      document.getElementById('paperAbstract').value = absText;
+
+      document.getElementById('paperPdfFile').required = false;
+      var fileName = pubToEdit.file ? pubToEdit.file.split('/').pop() : 'None';
+      document.getElementById('paperPdfNotice').innerText = 'Current PDF: ' + fileName + '. (Select a new PDF only if replacing).';
+    } else {
+      // Upload New Mode
+      if (adminModalTitle) adminModalTitle.innerText = 'Upload New Research Paper';
+      if (adminModalSubmitText) adminModalSubmitText.innerText = 'Publish Paper';
+      adminPaperForm.reset();
+      document.getElementById('paperEditingSlug').value = '';
+      document.getElementById('paperAuthor').value = 'Dr. Binod Kumar';
+      document.getElementById('paperAuthorRole').value = 'Founder & Chief AI Officer, AgentsArchitects.ai · AI Research Mentor';
+      document.getElementById('paperAuthorAffiliation').value = 'Indian Institute of Technology Bombay & Banaras Hindu University';
+      document.getElementById('paperLabAffiliation').value = 'Frontier Research Series';
+      document.getElementById('paperSeries').value = 'Frontier Research Series';
+      document.getElementById('paperType').value = 'Research Paper';
+      document.getElementById('paperStatus').value = 'In review';
+      document.getElementById('paperFormat').value = 'PDF / Research Paper';
+      
+      var currentMonthYear = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date());
+      document.getElementById('paperDate').value = currentMonthYear;
+      document.getElementById('paperProvenance').value = 'Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.';
+      document.getElementById('paperPdfFile').required = true;
+      document.getElementById('paperPdfNotice').innerText = 'Only PDF files accepted (max 50MB).';
+    }
+
+    adminPaperModal.style.display = 'flex';
+  }
+
+  function closePaperModal() {
+    if (adminPaperModal) adminPaperModal.style.display = 'none';
+  }
+
+  if (adminNewPaperBtn) {
+    adminNewPaperBtn.addEventListener('click', function() {
+      openPaperModal(null);
+    });
+  }
+
+  if (adminModalCloseBtn) adminModalCloseBtn.addEventListener('click', closePaperModal);
+  if (adminModalCancelBtn) adminModalCancelBtn.addEventListener('click', closePaperModal);
+
+  if (adminPaperModal) {
+    adminPaperModal.addEventListener('click', function(e) {
+      if (e.target === adminPaperModal) closePaperModal();
+    });
+  }
+
+  // Paper Form Submission (Create / Edit)
+  if (adminPaperForm) {
+    adminPaperForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var token = getAdminToken();
+      if (!token) {
+        alert('Your session has expired. Please log in again.');
+        initAdminView();
+        return;
+      }
+
+      var editingSlug = document.getElementById('paperEditingSlug').value;
+      var isEdit = Boolean(editingSlug);
+      var title = document.getElementById('paperTitle').value.trim();
+      var subtitle = document.getElementById('paperSubtitle').value.trim();
+      var author = document.getElementById('paperAuthor').value.trim();
+      var authorRole = document.getElementById('paperAuthorRole').value.trim();
+      var authorAffiliation = document.getElementById('paperAuthorAffiliation').value.trim();
+      var labAffiliation = document.getElementById('paperLabAffiliation').value.trim();
+      var type = document.getElementById('paperType').value;
+      var status = document.getElementById('paperStatus').value;
+      var series = document.getElementById('paperSeries').value.trim();
+      var date = document.getElementById('paperDate').value.trim();
+      var format = document.getElementById('paperFormat').value.trim();
+      var subjectsRaw = document.getElementById('paperSubjects').value.trim();
+      var subjects = subjectsRaw ? subjectsRaw.split(',').map(function(s){ return s.trim(); }).filter(Boolean) : [];
+      var provenance = document.getElementById('paperProvenance').value.trim();
+      var abstractRaw = document.getElementById('paperAbstract').value.trim();
+      var abstractParagraphs = abstractRaw.split('\n\n').map(function(p){ return p.trim(); }).filter(Boolean);
+      var fileInput = document.getElementById('paperPdfFile');
+
+      if (!title || !author || abstractParagraphs.length === 0) {
+        if (adminFormStatus) {
+          adminFormStatus.innerText = 'Please fill in all required fields (Title, Author, Abstract).';
+          adminFormStatus.style.color = '#d32f2f';
+          adminFormStatus.style.display = 'block';
+        }
+        return;
+      }
+
+      adminModalSubmitBtn.disabled = true;
+      adminModalSubmitBtn.style.opacity = '0.6';
+      if (adminModalSubmitText) adminModalSubmitText.innerText = isEdit ? 'Updating...' : 'Publishing...';
+      if (adminFormStatus) adminFormStatus.style.display = 'none';
+
+      // Step 1: Upload PDF if provided
+      var uploadPromise = Promise.resolve(null);
+      if (fileInput.files && fileInput.files[0]) {
+        var pdfFile = fileInput.files[0];
+        if (!pdfFile.name.toLowerCase().endsWith('.pdf')) {
+          adminFormStatus.innerText = 'Selected file must be a PDF.';
+          adminFormStatus.style.color = '#d32f2f';
+          adminFormStatus.style.display = 'block';
+          adminModalSubmitBtn.disabled = false;
+          adminModalSubmitBtn.style.opacity = '1';
+          if (adminModalSubmitText) adminModalSubmitText.innerText = isEdit ? 'Update Paper' : 'Publish Paper';
+          return;
+        }
+
+        var formData = new FormData();
+        formData.append('file', pdfFile);
+
+        uploadPromise = fetch(getApiBaseUrl() + '/api/admin/upload-pdf', {
+          method: 'POST',
+          headers: { 'Authorization': 'Bearer ' + token },
+          body: formData
+        }).then(function(res) {
+          if (!res.ok) {
+            return res.json().then(function(errData) {
+              throw new Error(errData.detail || 'PDF upload failed.');
+            });
+          }
+          return res.json();
+        });
+      }
+
+      uploadPromise.then(function(uploadResult) {
+        var payload = {
+          title: title,
+          subtitle: subtitle,
+          author: author,
+          authorRole: authorRole,
+          authorAffiliation: authorAffiliation,
+          labAffiliation: labAffiliation,
+          type: type,
+          status: status,
+          series: series,
+          date: date,
+          format: format,
+          subjects: subjects,
+          provenance: provenance,
+          abstract: abstractParagraphs
+        };
+
+        if (uploadResult && uploadResult.file) {
+          payload.file = uploadResult.file;
+        }
+
+        var targetUrl = isEdit 
+          ? (getApiBaseUrl() + '/api/admin/publications/' + encodeURIComponent(editingSlug))
+          : (getApiBaseUrl() + '/api/admin/publications');
+
+        var method = isEdit ? 'PUT' : 'POST';
+
+        return fetch(targetUrl, {
+          method: method,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify(payload)
+        });
+      }).then(function(res) {
+        if (!res.ok) {
+          return res.json().then(function(errData) {
+            throw new Error(errData.detail || 'Failed to save publication.');
+          });
+        }
+        return res.json();
+      }).then(function() {
+        closePaperModal();
+        loadAdminDashboard();
+        fetchPublications();
+      }).catch(function(err) {
+        if (adminFormStatus) {
+          adminFormStatus.innerText = err.message || 'An error occurred. Please try again.';
+          adminFormStatus.style.color = '#d32f2f';
+          adminFormStatus.style.display = 'block';
+        }
+      }).finally(function() {
+        adminModalSubmitBtn.disabled = false;
+        adminModalSubmitBtn.style.opacity = '1';
+        if (adminModalSubmitText) adminModalSubmitText.innerText = isEdit ? 'Update Paper' : 'Publish Paper';
+      });
+    });
+  }
+
+  // Delete Modal logic
+  var adminDeleteModal = document.getElementById('adminDeleteModal');
+  var adminDeleteTargetTitle = document.getElementById('adminDeleteTargetTitle');
+  var adminDeleteTargetSlug = document.getElementById('adminDeleteTargetSlug');
+  var adminDeleteCloseBtn = document.getElementById('adminDeleteModalCloseBtn');
+  var adminDeleteCancelBtn = document.getElementById('adminDeleteCancelBtn');
+  var adminDeleteConfirmBtn = document.getElementById('adminDeleteConfirmBtn');
+  var adminDeleteStatus = document.getElementById('adminDeleteStatus');
+
+  function openDeleteModal(slug, title) {
+    if (!adminDeleteModal) return;
+    if (adminDeleteTargetSlug) adminDeleteTargetSlug.value = slug;
+    if (adminDeleteTargetTitle) adminDeleteTargetTitle.innerText = title || slug;
+    if (adminDeleteStatus) adminDeleteStatus.style.display = 'none';
+    adminDeleteModal.scrollTop = 0;
+    adminDeleteModal.style.display = 'flex';
+  }
+
+  function closeDeleteModal() {
+    if (adminDeleteModal) adminDeleteModal.style.display = 'none';
+  }
+
+  if (adminDeleteCloseBtn) adminDeleteCloseBtn.addEventListener('click', closeDeleteModal);
+  if (adminDeleteCancelBtn) adminDeleteCancelBtn.addEventListener('click', closeDeleteModal);
+
+  if (adminDeleteModal) {
+    adminDeleteModal.addEventListener('click', function(e) {
+      if (e.target === adminDeleteModal) closeDeleteModal();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closePaperModal();
+      closeDeleteModal();
+    }
+  });
+
+  if (adminDeleteConfirmBtn) {
+    adminDeleteConfirmBtn.addEventListener('click', function() {
+      var token = getAdminToken();
+      var slug = adminDeleteTargetSlug ? adminDeleteTargetSlug.value : '';
+      if (!token || !slug) return;
+
+      adminDeleteConfirmBtn.disabled = true;
+      adminDeleteConfirmBtn.style.opacity = '0.6';
+
+      fetch(getApiBaseUrl() + '/api/admin/publications/' + encodeURIComponent(slug), {
+        method: 'DELETE',
+        headers: { 'Authorization': 'Bearer ' + token }
+      }).then(function(res) {
+        if (!res.ok) {
+          return res.json().then(function(errData) {
+            throw new Error(errData.detail || 'Delete failed.');
+          });
+        }
+        return res.json();
+      }).then(function() {
+        closeDeleteModal();
+        loadAdminDashboard();
+        fetchPublications();
+      }).catch(function(err) {
+        if (adminDeleteStatus) {
+          adminDeleteStatus.innerText = err.message || 'Error deleting publication.';
+          adminDeleteStatus.style.color = '#d32f2f';
+          adminDeleteStatus.style.display = 'block';
+        }
+      }).finally(function() {
+        adminDeleteConfirmBtn.disabled = false;
+        adminDeleteConfirmBtn.style.opacity = '1';
+      });
+    });
+  }
+
+  // Delegated clicks for Edit and Delete buttons in Admin Dashboard
+  document.addEventListener('click', function(e) {
+    var editBtn = e.target.closest('.btn-edit-pub');
+    if (editBtn) {
+      var slug = editBtn.getAttribute('data-slug');
+      var pub = PUBLICATIONS_DATA.find(function(p) { return p.slug === slug; });
+      if (pub) openPaperModal(pub);
+      return;
+    }
+
+    var delBtn = e.target.closest('.btn-delete-pub');
+    if (delBtn) {
+      var delSlug = delBtn.getAttribute('data-slug');
+      var delTitle = delBtn.getAttribute('data-title');
+      openDeleteModal(delSlug, delTitle);
+      return;
+    }
+  });
 
 })();
 </script>

@@ -1,0 +1,241 @@
+[
+  {
+    "slug": "closing-the-handoff-gap-attenuated-agent-delegation",
+    "title": "Closing the Handoff Gap: Attenuated Agent Delegation",
+    "subtitle": "A Reference Architecture for Attenuated Agent Delegation: Verifiable, Monotonic, Cross-Domain Delegation for Multi-Agent Systems",
+    "type": "Preprint",
+    "status": "In review",
+    "author": "Binod Kumar",
+    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai",
+    "authorAffiliation": "Produced for and with Frontier Research Lab",
+    "labAffiliation": "Frontier Research Lab · cs.CR",
+    "date": "August 2026",
+    "series": "Frontier Research Series Preprints",
+    "format": "PDF (13 pages)",
+    "subjects": [
+      "cs.CR (Cryptography and Security)",
+      "Attenuated Delegation Credential",
+      "Monotonic Capabilities",
+      "Multi-Agent Security",
+      "SPIFFE/SPIRE"
+    ],
+    "abstract": [
+      "The agent-to-agent handoff, the moment one AI agent passes work to another, is the seam along which multi-agent systems most often fail. As a companion analysis argues, three structural breakages compound at each hop: identity collapse, where the agent's identity replaces the human's; non-attenuation, where privilege never narrows as it is forwarded; and loss of the anchor, where no deployed protocol can prove which human authorized which action three or four hops down a recursive, cross-domain delegation chain. The result is a confused deputy at machine speed.",
+      "This paper moves from diagnosis to construction. We present the Attenuated Delegation Credential (adc), a public-key, caveat-based capability whose scope can only ever narrow as it is delegated, and whose chain of signed blocks makes the originating human and every intermediary agent cryptographically verifiable at any depth, across trust domains, without pre-arranged federation. Around it we specify a reference architecture: workload-attested agent identities, an identity-aware enforcement gateway at every boundary, just-in-time attenuated minting, per-action runtime authorization, a tamper-evident transparency log, and depth-bounded delegation with human checkpoints for high-impact actions.",
+      "We give a formal model and prove five properties: monotone attenuation, intersection-ceiling safety (which reduces the confused-deputy condition to a policy violation the gateway rejects), attribution soundness under existential unforgeability, bounded delegation depth, and contagion containment. We describe a prototype composed from SPIFFE/SPIRE, biscuit-style tokens, Open Policy Agent, and a Merkle transparency log, and give an analytical cost model with illustrative, to-be-validated overhead figures. The architecture satisfies all seven session-trust requirements simultaneously and provably blocks four attack classes, namely injection-driven confused deputy, authority re-delegation contagion, cross-organization token pivots, and identity collapse, that the current composition of OAuth, SPIFFE, or macaroons alone does not."
+    ],
+    "file": "research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf",
+    "id": "closing-the-handoff-gap-attenuated-agent-delegation",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-08-03T00:00:00+00:00"
+  },
+  {
+    "slug": "a-field-guide-to-agent-harness-engineering",
+    "title": "A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents",
+    "subtitle": "The Architecture Behind Reliable AI Agents: Governing Observation, Action, Memory, Recovery, and Verification in Autonomous Systems",
+    "type": "Research Paper",
+    "status": "In review",
+    "author": "Dr. Binod Kumar",
+    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai · AI Research Mentor",
+    "authorAffiliation": "Indian Institute of Technology Bombay & Banaras Hindu University",
+    "labAffiliation": "Frontier Research Series",
+    "date": "June 2026",
+    "series": "Frontier Research Series",
+    "format": "DOCX / Research Paper",
+    "subjects": [
+      "Agent Harness Architecture",
+      "AI Safety & Governance",
+      "Runtime Systems",
+      "Autonomous Verification",
+      "Labeled Transition Systems"
+    ],
+    "abstract": [
+      "For most of the last three years, the implicit thesis of agentic AI has been simple: a better model produces a better agent. Buy the frontier model, write a good prompt, wire up some tools, and reliability follows. Between March and June 2026, a cluster of papers landed that, read together, argue something close to the opposite. The binding constraint on real-world agent reliability is increasingly not the model. It is the harness — the runtime system that wraps the model and governs how it observes, acts, remembers, recovers, and is verified.",
+      "This is not a vocabulary game. It changes how you staff a team, where you spend compute budget, what you put in a benchmark, and what you can honestly promise a board. Below I work through seven papers, group them into a coherent picture, and end with what I think it means in practice. References are listed in full at the end so the claims here are traceable to their sources rather than to me.",
+      "Agent capability is increasingly externalized out of model weights and into the surrounding runtime — and the engineering of that runtime, the harness, is now a first-class determinant of system behavior. Drawing on Donald Norman's idea of cognitive artifacts, agent infrastructure matters not because it bolts on extra parts, but because it transforms a hard cognitive burden into an easier one — the way a shopping list turns \"recall the items\" into \"recognize the items,\" or a map turns hidden spatial relationships into visible structure. In their taxonomy: memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and the harness is the unification layer that coordinates all of them into governed execution."
+    ],
+    "file": "research paper/A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents.docx",
+    "id": "a-field-guide-to-agent-harness-engineering",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-07-27T00:00:00+00:00"
+  },
+  {
+    "slug": "aar-wp-2026-21-working-paper",
+    "title": "AAR-WP-2026-21 Working Paper",
+    "subtitle": "Governance Is the Moat: An Agentic Authority Architecture for Enterprise AI in the Era of Autonomous Offensive Capability",
+    "type": "Working Paper",
+    "status": "In review",
+    "author": "Dr. Binod Kumar",
+    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai · Adjunct Lecturer and AI Research Mentor",
+    "authorAffiliation": "Indian Institute of Technology",
+    "labAffiliation": "AgentsArchitects.ai Research · Working Paper AAR-WP-2026-01",
+    "date": "April 2026",
+    "series": "AgentsArchitects.ai Research Working Paper",
+    "format": "PDF (23 pages)",
+    "subjects": [
+      "Enterprise AI Governance",
+      "Autonomous Offensive Capability",
+      "NIST AI RMF",
+      "Authority Architecture",
+      "MITRE ATLAS"
+    ],
+    "abstract": [
+      "In April 2026, two frontier AI laboratories independently disclosed models capable of autonomous end-to-end compromise of simulated enterprise networks, autonomous discovery of zero-day vulnerabilities across every major operating system and browser, and working exploit generation at a cost of approximately fifty United States dollars per run. These disclosures, corroborated by independent evaluation from the United Kingdom AI Safety Institute, mark a qualitative inflection in the asymmetry between enterprise defenders and AI-enabled adversaries.",
+      "This working paper argues that the resulting risk environment is inadequately addressed by existing enterprise security and AI governance frameworks taken in isolation, and that a composite architecture is required. We propose the Agentic Authority Architecture (AAA) Framework: a four-layer governance model spanning Identity, Authorization, Attestation, and Accountability, applied across three actor classes — human principals, autonomous agents, and delegated capabilities.",
+      "The framework is designed to extend the National Institute of Standards and Technology AI Risk Management Framework (NIST AI RMF 1.0 and the AI 600-1 Generative AI Profile), operationalize the CISA, NSA, and FBI joint guidance on secure AI integration, and provide enterprise boards with a measurable governance substrate for the autonomous agent era. We synthesize observations from over one hundred and twenty enterprise AI engagements across financial services, pharmaceutical manufacturing, healthcare payers, aviation and defense supply chains, and professional services, conducted between 2022 and 2026. We map the AAA Framework against the NIST AI RMF core functions and MITRE ATLAS adversarial taxonomy, and propose a phased ninety-day implementation pathway."
+    ],
+    "file": "research paper/AAR-WP-2026-21_Working_Paper.pdf",
+    "id": "aar-wp-2026-21-working-paper",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-07-20T00:00:00+00:00"
+  },
+  {
+    "slug": "agent-to-agent-handoff-problem",
+    "title": "Agent to Agent Handoff Problem",
+    "subtitle": "Session Trust and Privilege Escalation Across Agent Boundaries",
+    "type": "Research Paper",
+    "status": "In review",
+    "author": "Binod Kumar",
+    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai",
+    "authorAffiliation": "Mentor, Indian Institute of Technology Bombay and Banaras Hindu University",
+    "labAffiliation": "AuthClaw Foundation & AGI Learning Hub, India",
+    "date": "March 2026",
+    "series": "Frontier Research Series",
+    "format": "PDF (9 pages)",
+    "subjects": [
+      "Multi-Agent Systems",
+      "Trust Boundaries",
+      "Privilege Escalation",
+      "Confused Deputy",
+      "OAuth Token Exchange"
+    ],
+    "abstract": [
+      "The industry spent 2024 and 2025 learning how to secure the individual agent. The problem still open in 2026 is securing the handoff: the moment one agent passes work to another and a trust boundary gets crossed without anyone checking it. Consider what happens when Agent A asks Agent B to deploy something to production, or to pull a customer's records. Three questions go unanswered, and they go unanswered at machine speed. Did A really hold the authority it just passed on? Will B end up with more access than it should? And whose human authorization, if anyone's, still sits behind the action four hops down the chain? In most production multi-agent systems today, nobody checks any of the three.",
+      "This is not a new vulnerability. It is the confused deputy problem, known in distributed systems since 1988, showing up again in a setting that makes it far more dangerous, because agents are autonomous, act asynchronously, delegate recursively, and increasingly cross organizational lines. The defenses built for human-to-service authorization, such as OAuth, SAML and OIDC, carry assumptions that agents break.",
+      "For a Chief AI Officer the takeaway is uncomfortable but simple: if your threat model still treats an AI agent as a passive query tool, your multi-agent rollout is already moving faster than your identity controls. For a researcher, proving which human authorized which action across a recursive delegation chain remains unsolved, and it is a problem where real progress can be made."
+    ],
+    "file": "research paper/Agent to Agent Handoff Problem.pdf",
+    "id": "agent-to-agent-handoff-problem",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-07-13T00:00:00+00:00"
+  },
+  {
+    "slug": "authorization-for-self-improving-agents",
+    "title": "Authorization for Self-Improving Agents",
+    "subtitle": "Governing Self-Modification at the Capability Boundary",
+    "type": "Preprint",
+    "status": "In review",
+    "author": "Binod Kumar",
+    "authorRole": "Founder and Chief AI Officer, AgentsArchitects.ai",
+    "authorAffiliation": "Mentor at E-Cell, IIT Bombay and IIT (BHU) Varanasi, India",
+    "labAffiliation": "Frontier Research Series · AuthClaw Foundation & AGI Learning Hub",
+    "date": "July 2026",
+    "series": "Frontier Research Series Preprints",
+    "format": "PDF (11 pages)",
+    "subjects": [
+      "Self-Improving Systems",
+      "Capability Boundaries",
+      "Admission Control",
+      "Lineage Verification",
+      "Reference Monitors"
+    ],
+    "abstract": [
+      "For three years, the enterprise security community has worked on a well-posed question: given an autonomous agent, which actions may it take, on which resources, under which conditions. The industry has answered it competently. The Model Context Protocol now treats servers as OAuth 2.1 resource servers with audience-bound tokens, the Agent2Agent protocol gives agents discoverable identities, and policy engines mediate calls at runtime. These are real advances, and they share one assumption: the agent is a fixed artifact whose set of possible actions is enumerable and authored by a person.",
+      "That assumption is being retired in production. Recursive self-improvement has moved from thought experiment to deployed practice. Systems now rewrite their own prompts, edit their own tool configurations, curate their own memory, and, in research settings, modify the code and weights of their own successors. When an agent can change itself, the security question changes with it. The action set tomorrow is not the action set today, the change was written by the agent, and no operator signed it.",
+      "This paper argues that the unit of authorization for a self-improving agent is not the action and not the improved behavior. It is the improvement operator: the mechanism by which the agent changes itself. A static system asks one question, may this action proceed. A self-modifying system is forced to ask a second and harder one, may this change to the agent proceed, including changes to the component that answers the first question. The second question dominates, because a change to the authorizer silently rewrites the answer to every future instance of the first.",
+      "The failure this creates is authority amplification through self-modification, and it is structural rather than accidental. It requires no adversary, though adversaries make it worse. It is a modern instance of two classical results: the reference monitor requirement that the mechanism deciding access be tamper-proof and non-bypassable, and the confused deputy, in which a component is induced to exercise authority it holds but should not use in a given setting. We review the state of the art, define the problem formally, evaluate why existing technologies each address part of the problem but none the whole, and present an original architecture in which the improvement operator is held above the agent, every self-change is admission-controlled, identity is re-bound at each generation, and the loop is kept reversible."
+    ],
+    "file": "research paper/Authorization-for-Self-Improving-Agents.pdf",
+    "id": "authorization-for-self-improving-agents",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-06-29T00:00:00+00:00"
+  },
+  {
+    "slug": "inference-is-the-new-frontier-2",
+    "title": "Inference Is the New Frontier 2",
+    "subtitle": "Why the Decode Loop, Not the Model, Now Decides Enterprise AI Economics",
+    "type": "Research Paper",
+    "status": "In review",
+    "author": "Binod Kumar",
+    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai",
+    "authorAffiliation": "Mentor at E-Cell, IIT Bombay and Banaras Hindu University, India",
+    "labAffiliation": "Frontier Research Series · AuthClaw Foundation & AGI Learning Hub",
+    "date": "June 2026",
+    "series": "Frontier Research Series",
+    "format": "PDF (9 pages)",
+    "subjects": [
+      "Inference Systems",
+      "Speculative Decoding",
+      "Decode Loop Latency",
+      "AI Economics",
+      "Vocabulary Speculation"
+    ],
+    "abstract": [
+      "The industry spent the last three years learning how to train and pick models. The problem still open in 2026 is how to serve them, because the cost, speed, and margin of an enterprise AI product are now set inside the decode loop rather than inside the model weights. Consider a customer-facing assistant that answers in two seconds at a hundred concurrent users and in nine seconds at ten thousand. Nothing about the model changed between those two states. What changed was the serving regime, and that regime is now where the money is won or lost.",
+      "This paper argues that inference has become a first-class systems-engineering discipline, and that recent research on speculative decoding makes the point concrete. A measurement study of speculative decoding on a production engine found that verification by the target model, not drafting, dominates execution time, and that the real speedup falls well short of the theoretical bound. New methods answer that finding from two directions: SpecVocab attacks the cost of the draft step by speculating on which slice of the vocabulary to compute, and DSpark attacks the verification step by scheduling how much to verify against live hardware load. The underlying lesson is an old one in systems work, the difference between a microbenchmark and a production workload, only newly expensive.",
+      "For a Chief AI Officer the takeaway is uncomfortable but simple: your unit cost and your latency are properties of how you serve, not of which model you bought, and a competitor on the same model can beat you on both. For a researcher, the open questions are about adaptive, load-aware, lossless inference and how to certify it. The thesis is narrower and more useful than \"inference matters now\": the decode loop is a tunable system with its own failure modes, and treating it as a fixed cost is the mistake."
+    ],
+    "file": "research paper/Inference-Is-the-New-Frontier_2.pdf",
+    "id": "inference-is-the-new-frontier-2",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-06-22T00:00:00+00:00"
+  },
+  {
+    "slug": "rag-is-not-memory-preprint",
+    "title": "RAG Is Not Memory Preprint",
+    "subtitle": "Why Retrieval and Memory Are Different Systems, and What the Confusion Costs the Enterprise",
+    "type": "Preprint",
+    "status": "In review",
+    "author": "Binod Kumar",
+    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai",
+    "authorAffiliation": "Mentor at E-Cell, IIT Bombay and Banaras Hindu University, India",
+    "labAffiliation": "Frontier Research Series · AuthClaw Foundation & AGI Learning Hub",
+    "date": "June 2026",
+    "series": "Frontier Research Series Preprints",
+    "format": "PDF (8 pages)",
+    "subjects": [
+      "Retrieval Systems",
+      "Stateful Memory",
+      "Vector Search Limitations",
+      "Enterprise Knowledge Architecture"
+    ],
+    "abstract": [
+      "The industry spent the last two years learning how to bolt knowledge onto a language model. The move almost everyone made was retrieval-augmented generation, and somewhere along the way the field began calling it memory. It is not memory. RAG is a read-time mechanism that fetches passages from a fixed, externally curated corpus and places them in the context window. Memory is a stateful substrate that an agent writes to and reads from, holding what it learns about its own experience, its users, and a world that keeps changing. The two share one primitive, vector similarity search, which is why they get confused, and why the confusion stays hidden until it has already cost something. A system built for retrieval can fetch a document. It cannot learn from an interaction, personalize, resolve a contradiction, or reason about time.",
+      "For a Chief AI Officer the takeaway is blunt: if your agents remember by searching their own old messages, they will keep forgetting what matters, and at enterprise scale that forgetting becomes a governance, cost, and security problem rather than a quality one. For a researcher, retrieval that is native to memory, meaning bounded, temporal, attenuable, and auditable, is still largely unbuilt, and that is where real progress can be made. The thesis is not that RAG is dead. It is narrower and more useful than that: naive RAG is the wrong abstraction for memory, and treating retrieval as memory is an architectural mistake that compounds with scale and autonomy."
+    ],
+    "file": "research paper/RAG Is Not Memory Preprint.pdf",
+    "id": "rag-is-not-memory-preprint",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-06-15T00:00:00+00:00"
+  },
+  {
+    "slug": "the-verification-bottleneck-technical-preprint",
+    "title": "The Verification Bottleneck Technical Preprint",
+    "subtitle": "Toward Adaptive, Lossless Speculative Decoding for Autoregressive Language Models",
+    "type": "Technical Preprint",
+    "status": "In review",
+    "author": "Binod Kumar",
+    "authorRole": "AgentsArchitects.ai",
+    "authorAffiliation": "Mentor, E-Cell, Indian Institute of Technology Bombay and Banaras Hindu University",
+    "labAffiliation": "Frontier Research Series",
+    "date": "June 2026",
+    "series": "Frontier Research Series Technical Preprints",
+    "format": "PDF (8 pages)",
+    "subjects": [
+      "Speculative Decoding",
+      "Verification Bottleneck",
+      "Autoregressive Inference",
+      "Lossless Acceleration",
+      "Adaptive Scheduling"
+    ],
+    "abstract": [
+      "Speculative decoding accelerates autoregressive language-model inference by proposing tokens with a cheap draft model and verifying them in parallel with the target model, preserving the target output distribution exactly. Most of the literature has optimized the draft: better draft architectures, tree-structured proposals, and reduced draft vocabularies. A recent systematic measurement of speculative decoding on a production engine complicates that focus. It reports that verification by the target model, not drafting, dominates end-to-end execution, that acceptance length varies sharply across token positions, requests, and datasets, and that observed speedups fall well short of the theoretical bound. This survey takes that finding as its organizing question and maps the design space it implies.",
+      "We formalize speculative decoding as a three-term latency model, separate draft-side from verify-side optimization, and place recent methods within it. On the draft side, we examine the vocabulary projection bottleneck and the move from static reduced vocabularies (FR-Spec, VocabTrim, EAGLE-3) to per-step vocabulary speculation (SpecVocab). On the verify side, we examine semi-autoregressive drafting and load-aware, confidence-scheduled verification (DSpark).",
+      "We argue that the field is converging on a single under-formalized object: an inference procedure that is adaptive to live load and per-token acceptance, while remaining lossless with respect to the target distribution. We state seven properties such a procedure must satisfy, show that no current method satisfies all seven, and close with six open problems, the sharpest of which is reducing the per-token cost of verification itself rather than the cost of the draft."
+    ],
+    "file": "research paper/The-Verification-Bottleneck-Technical-Preprint.pdf",
+    "id": "the-verification-bottleneck-technical-preprint",
+    "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
+    "created_at": "2026-06-08T00:00:00+00:00"
+  }
+]
