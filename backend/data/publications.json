@@ -1,6 +1,6 @@
 [
   {
-    "slug": "closing-the-handoff-gap-attenuated-agent-delegation",
+    "slug": "913640275",
     "title": "Closing the Handoff Gap: Attenuated Agent Delegation",
     "subtitle": "A Reference Architecture for Attenuated Agent Delegation: Verifiable, Monotonic, Cross-Domain Delegation for Multi-Agent Systems",
     "type": "Preprint",
@@ -25,42 +25,40 @@
       "We give a formal model and prove five properties: monotone attenuation, intersection-ceiling safety (which reduces the confused-deputy condition to a policy violation the gateway rejects), attribution soundness under existential unforgeability, bounded delegation depth, and contagion containment. We describe a prototype composed from SPIFFE/SPIRE, biscuit-style tokens, Open Policy Agent, and a Merkle transparency log, and give an analytical cost model with illustrative, to-be-validated overhead figures. The architecture satisfies all seven session-trust requirements simultaneously and provably blocks four attack classes, namely injection-driven confused deputy, authority re-delegation contagion, cross-organization token pivots, and identity collapse, that the current composition of OAuth, SPIFFE, or macaroons alone does not."
     ],
     "file": "research paper/Closing the Handoff Gap Attenuated Agent Delegation.pdf",
-    "id": "closing-the-handoff-gap-attenuated-agent-delegation",
+    "id": "913640275",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-08-03T00:00:00+00:00"
+    "created_at": "2026-08-03T00:00:00+00:00",
+    "numeric_id": "913640275",
+    "legacy_slug": "closing-the-handoff-gap-attenuated-agent-delegation"
   },
   {
-    "slug": "a-field-guide-to-agent-harness-engineering",
+    "slug": "786579303",
     "title": "A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents",
     "subtitle": "The Architecture Behind Reliable AI Agents: Governing Observation, Action, Memory, Recovery, and Verification in Autonomous Systems",
     "type": "Research Paper",
     "status": "In review",
     "author": "Dr. Binod Kumar",
-    "authorRole": "Founder & Chief AI Officer, AgentsArchitects.ai · AI Research Mentor",
-    "authorAffiliation": "Indian Institute of Technology Bombay & Banaras Hindu University",
-    "labAffiliation": "Frontier Research Series",
+    "authorRole": "",
+    "authorAffiliation": "",
+    "labAffiliation": "",
     "date": "June 2026",
     "series": "Frontier Research Series",
-    "format": "DOCX / Research Paper",
-    "subjects": [
-      "Agent Harness Architecture",
-      "AI Safety & Governance",
-      "Runtime Systems",
-      "Autonomous Verification",
-      "Labeled Transition Systems"
-    ],
+    "format": "PDF / Research Paper",
+    "subjects": [],
     "abstract": [
       "For most of the last three years, the implicit thesis of agentic AI has been simple: a better model produces a better agent. Buy the frontier model, write a good prompt, wire up some tools, and reliability follows. Between March and June 2026, a cluster of papers landed that, read together, argue something close to the opposite. The binding constraint on real-world agent reliability is increasingly not the model. It is the harness — the runtime system that wraps the model and governs how it observes, acts, remembers, recovers, and is verified.",
       "This is not a vocabulary game. It changes how you staff a team, where you spend compute budget, what you put in a benchmark, and what you can honestly promise a board. Below I work through seven papers, group them into a coherent picture, and end with what I think it means in practice. References are listed in full at the end so the claims here are traceable to their sources rather than to me.",
       "Agent capability is increasingly externalized out of model weights and into the surrounding runtime — and the engineering of that runtime, the harness, is now a first-class determinant of system behavior. Drawing on Donald Norman's idea of cognitive artifacts, agent infrastructure matters not because it bolts on extra parts, but because it transforms a hard cognitive burden into an easier one — the way a shopping list turns \"recall the items\" into \"recognize the items,\" or a map turns hidden spatial relationships into visible structure. In their taxonomy: memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and the harness is the unification layer that coordinates all of them into governed execution."
     ],
     "file": "research paper/A Field Guide to Agent Harness Engineering - The Architecture Behind Reliable AI Agents.docx",
-    "id": "a-field-guide-to-agent-harness-engineering",
+    "id": "786579303",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-07-27T00:00:00+00:00"
+    "created_at": "2026-07-27T00:00:00+00:00",
+    "numeric_id": "786579303",
+    "legacy_slug": "a-field-guide-to-agent-harness-engineering"
   },
   {
-    "slug": "aar-wp-2026-21-working-paper",
+    "slug": "482915736",
     "title": "AAR-WP-2026-21 Working Paper",
     "subtitle": "Governance Is the Moat: An Agentic Authority Architecture for Enterprise AI in the Era of Autonomous Offensive Capability",
     "type": "Working Paper",
@@ -85,12 +83,14 @@
       "The framework is designed to extend the National Institute of Standards and Technology AI Risk Management Framework (NIST AI RMF 1.0 and the AI 600-1 Generative AI Profile), operationalize the CISA, NSA, and FBI joint guidance on secure AI integration, and provide enterprise boards with a measurable governance substrate for the autonomous agent era. We synthesize observations from over one hundred and twenty enterprise AI engagements across financial services, pharmaceutical manufacturing, healthcare payers, aviation and defense supply chains, and professional services, conducted between 2022 and 2026. We map the AAA Framework against the NIST AI RMF core functions and MITRE ATLAS adversarial taxonomy, and propose a phased ninety-day implementation pathway."
     ],
     "file": "research paper/AAR-WP-2026-21_Working_Paper.pdf",
-    "id": "aar-wp-2026-21-working-paper",
+    "id": "482915736",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-07-20T00:00:00+00:00"
+    "created_at": "2026-07-20T00:00:00+00:00",
+    "numeric_id": "482915736",
+    "legacy_slug": "aar-wp-2026-21-working-paper"
   },
   {
-    "slug": "agent-to-agent-handoff-problem",
+    "slug": "629401853",
     "title": "Agent to Agent Handoff Problem",
     "subtitle": "Session Trust and Privilege Escalation Across Agent Boundaries",
     "type": "Research Paper",
@@ -115,12 +115,14 @@
       "For a Chief AI Officer the takeaway is uncomfortable but simple: if your threat model still treats an AI agent as a passive query tool, your multi-agent rollout is already moving faster than your identity controls. For a researcher, proving which human authorized which action across a recursive delegation chain remains unsolved, and it is a problem where real progress can be made."
     ],
     "file": "research paper/Agent to Agent Handoff Problem.pdf",
-    "id": "agent-to-agent-handoff-problem",
+    "id": "629401853",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-07-13T00:00:00+00:00"
+    "created_at": "2026-07-13T00:00:00+00:00",
+    "numeric_id": "629401853",
+    "legacy_slug": "agent-to-agent-handoff-problem"
   },
   {
-    "slug": "authorization-for-self-improving-agents",
+    "slug": "517392846",
     "title": "Authorization for Self-Improving Agents",
     "subtitle": "Governing Self-Modification at the Capability Boundary",
     "type": "Preprint",
@@ -146,12 +148,14 @@
       "The failure this creates is authority amplification through self-modification, and it is structural rather than accidental. It requires no adversary, though adversaries make it worse. It is a modern instance of two classical results: the reference monitor requirement that the mechanism deciding access be tamper-proof and non-bypassable, and the confused deputy, in which a component is induced to exercise authority it holds but should not use in a given setting. We review the state of the art, define the problem formally, evaluate why existing technologies each address part of the problem but none the whole, and present an original architecture in which the improvement operator is held above the agent, every self-change is admission-controlled, identity is re-bound at each generation, and the loop is kept reversible."
     ],
     "file": "research paper/Authorization-for-Self-Improving-Agents.pdf",
-    "id": "authorization-for-self-improving-agents",
+    "id": "517392846",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-06-29T00:00:00+00:00"
+    "created_at": "2026-06-29T00:00:00+00:00",
+    "numeric_id": "517392846",
+    "legacy_slug": "authorization-for-self-improving-agents"
   },
   {
-    "slug": "inference-is-the-new-frontier-2",
+    "slug": "304829175",
     "title": "Inference Is the New Frontier 2",
     "subtitle": "Why the Decode Loop, Not the Model, Now Decides Enterprise AI Economics",
     "type": "Research Paper",
@@ -176,12 +180,14 @@
       "For a Chief AI Officer the takeaway is uncomfortable but simple: your unit cost and your latency are properties of how you serve, not of which model you bought, and a competitor on the same model can beat you on both. For a researcher, the open questions are about adaptive, load-aware, lossless inference and how to certify it. The thesis is narrower and more useful than \"inference matters now\": the decode loop is a tunable system with its own failure modes, and treating it as a fixed cost is the mistake."
     ],
     "file": "research paper/Inference-Is-the-New-Frontier_2.pdf",
-    "id": "inference-is-the-new-frontier-2",
+    "id": "304829175",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-06-22T00:00:00+00:00"
+    "created_at": "2026-06-22T00:00:00+00:00",
+    "numeric_id": "304829175",
+    "legacy_slug": "inference-is-the-new-frontier-2"
   },
   {
-    "slug": "rag-is-not-memory-preprint",
+    "slug": "840291736",
     "title": "RAG Is Not Memory Preprint",
     "subtitle": "Why Retrieval and Memory Are Different Systems, and What the Confusion Costs the Enterprise",
     "type": "Preprint",
@@ -204,12 +210,14 @@
       "For a Chief AI Officer the takeaway is blunt: if your agents remember by searching their own old messages, they will keep forgetting what matters, and at enterprise scale that forgetting becomes a governance, cost, and security problem rather than a quality one. For a researcher, retrieval that is native to memory, meaning bounded, temporal, attenuable, and auditable, is still largely unbuilt, and that is where real progress can be made. The thesis is not that RAG is dead. It is narrower and more useful than that: naive RAG is the wrong abstraction for memory, and treating retrieval as memory is an architectural mistake that compounds with scale and autonomy."
     ],
     "file": "research paper/RAG Is Not Memory Preprint.pdf",
-    "id": "rag-is-not-memory-preprint",
+    "id": "840291736",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-06-15T00:00:00+00:00"
+    "created_at": "2026-06-15T00:00:00+00:00",
+    "numeric_id": "840291736",
+    "legacy_slug": "rag-is-not-memory-preprint"
   },
   {
-    "slug": "the-verification-bottleneck-technical-preprint",
+    "slug": "295814037",
     "title": "The Verification Bottleneck Technical Preprint",
     "subtitle": "Toward Adaptive, Lossless Speculative Decoding for Autoregressive Language Models",
     "type": "Technical Preprint",
@@ -234,8 +242,10 @@
       "We argue that the field is converging on a single under-formalized object: an inference procedure that is adaptive to live load and per-token acceptance, while remaining lossless with respect to the target distribution. We state seven properties such a procedure must satisfy, show that no current method satisfies all seven, and close with six open problems, the sharpest of which is reducing the per-token cost of verification itself rather than the cost of the draft."
     ],
     "file": "research paper/The-Verification-Bottleneck-Technical-Preprint.pdf",
-    "id": "the-verification-bottleneck-technical-preprint",
+    "id": "295814037",
     "provenance": "Preprints in the Frontier Research Series are reviewed internally and by outside researchers. Published artifacts, reference implementations, and evaluations remain subject to open reproduction.",
-    "created_at": "2026-06-08T00:00:00+00:00"
+    "created_at": "2026-06-08T00:00:00+00:00",
+    "numeric_id": "295814037",
+    "legacy_slug": "the-verification-bottleneck-technical-preprint"
   }
 ]

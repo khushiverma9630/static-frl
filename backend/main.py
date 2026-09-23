@@ -134,6 +134,14 @@ def generate_safe_slug(title: str, existing_slugs: list[str], current_slug: Opti
     return slug
 
 
+def generate_unique_numeric_id(existing_ids: set) -> str:
+    """Generate a stable, unique 9-digit numeric publication identifier (e.g. 786579303)."""
+    while True:
+        candidate = str(secrets.randbelow(900000000) + 100000000)
+        if candidate not in existing_ids:
+            return candidate
+
+
 # === PYDANTIC SCHEMAS ===
 class ContactForm(BaseModel):
     fullName: constr(min_length=1, strip_whitespace=True)
@@ -180,6 +188,25 @@ class PublicationPayload(BaseModel):
 async def get_public_publications():
     """Retrieve all publications ordered newest-first."""
     return load_publications()
+
+
+@app.get("/api/publications/{pub_id}")
+async def get_public_publication(pub_id: str):
+    """Retrieve a single publication by its unique numeric ID (with backward compatibility)."""
+    pub_id_str = str(pub_id).strip()
+    pubs = load_publications()
+
+    # 1. Match by numeric ID
+    for p in pubs:
+        if str(p.get("id")) == pub_id_str or str(p.get("numeric_id")) == pub_id_str:
+            return p
+
+    # 2. Match by legacy title slug for backward compatibility
+    for p in pubs:
+        if p.get("legacy_slug") == pub_id_str or str(p.get("slug")) == pub_id_str:
+            return p
+
+    raise HTTPException(status_code=404, detail="Publication not found.")
 
 
 @app.post("/api/contact")
@@ -318,8 +345,11 @@ async def admin_list_publications(admin: str = Depends(get_current_admin)):
 @app.post("/api/admin/publications")
 async def admin_create_publication(payload: PublicationPayload, admin: str = Depends(get_current_admin)):
     pubs = load_publications()
-    existing_slugs = [p.get("slug") for p in pubs if "slug" in p]
-    slug = generate_safe_slug(payload.title, existing_slugs)
+    existing_ids = {str(p.get("id")) for p in pubs if p.get("id")}
+    existing_ids.update({str(p.get("numeric_id")) for p in pubs if p.get("numeric_id")})
+    existing_ids.update({str(p.get("slug")) for p in pubs if p.get("slug") and str(p.get("slug")).isdigit()})
+
+    numeric_id = generate_unique_numeric_id(existing_ids)
 
     # Normalize abstract to list of clean non-empty paragraphs
     if isinstance(payload.abstract, str):
@@ -331,8 +361,9 @@ async def admin_create_publication(payload: PublicationPayload, admin: str = Dep
     pub_date = payload.date if payload.date else datetime.now(timezone.utc).strftime("%B %Y")
 
     new_pub = {
-        "id": slug,
-        "slug": slug,
+        "id": numeric_id,
+        "numeric_id": numeric_id,
+        "slug": numeric_id,
         "title": payload.title,
         "subtitle": payload.subtitle or "",
         "type": payload.type or "Research Paper",
@@ -361,13 +392,14 @@ async def admin_create_publication(payload: PublicationPayload, admin: str = Dep
 async def admin_update_publication(slug: str, payload: PublicationPayload, admin: str = Depends(get_current_admin)):
     pubs = load_publications()
     found_idx = None
+    slug_str = str(slug).strip()
     for idx, p in enumerate(pubs):
-        if p.get("slug") == slug or p.get("id") == slug:
+        if str(p.get("id")) == slug_str or str(p.get("numeric_id")) == slug_str or str(p.get("slug")) == slug_str or p.get("legacy_slug") == slug_str:
             found_idx = idx
             break
 
     if found_idx is None:
-        raise HTTPException(status_code=404, detail=f"Publication with slug '{slug}' not found.")
+        raise HTTPException(status_code=404, detail=f"Publication with ID '{slug}' not found.")
 
     target = pubs[found_idx]
 
@@ -394,6 +426,12 @@ async def admin_update_publication(slug: str, payload: PublicationPayload, admin
     if payload.file:
         target["file"] = payload.file
 
+    # Ensure stable numeric ID is strictly preserved across edits
+    stable_id = str(target.get("id") or target.get("numeric_id") or target.get("slug"))
+    target["id"] = stable_id
+    target["numeric_id"] = stable_id
+    target["slug"] = stable_id
+
     save_publications(pubs)
     return {"success": True, "publication": target}
 
@@ -403,14 +441,15 @@ async def admin_delete_publication(slug: str, admin: str = Depends(get_current_a
     pubs = load_publications()
     found_idx = None
     deleted_pub = None
+    slug_str = str(slug).strip()
     for idx, p in enumerate(pubs):
-        if p.get("slug") == slug or p.get("id") == slug:
+        if str(p.get("id")) == slug_str or str(p.get("numeric_id")) == slug_str or str(p.get("slug")) == slug_str or p.get("legacy_slug") == slug_str:
             found_idx = idx
             deleted_pub = p
             break
 
     if found_idx is None:
-        raise HTTPException(status_code=404, detail=f"Publication with slug '{slug}' not found.")
+        raise HTTPException(status_code=404, detail=f"Publication with ID '{slug}' not found.")
 
     pubs.pop(found_idx)
     save_publications(pubs)
